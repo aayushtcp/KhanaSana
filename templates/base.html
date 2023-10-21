@@ -1,0 +1,38 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+
+    <title>Base | File</title>
+</head>
+
+<body>
+    <header class="header">
+        <!-- <img src="{%static 'logos.svg'%}" alt="lyamma lyamm logo" class="logo"> -->
+        <h1 class="logo">Lyamma</span></h1>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a class="nav-links" href="#">Home</a></li>
+                <li><a class="nav-links" href="#">About</a></li>
+                <li><a class="nav-links" href="#">Foods</a></li>
+                <li><a class="nav-links" href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <ion-icon name="menu-outline" class="mobile-icon-menu"></ion-icon>
+            <ion-icon name="close-outline" class="mobile-icon-close"></ion-icon>
+        </div>
+    </header>
+
+
+    <!-- Java script section starts -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="{%static 'base.js' %}"></script>
+</body>
+
+</html>
