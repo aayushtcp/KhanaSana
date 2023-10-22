@@ -15,7 +15,8 @@
 }
 
 html {
-    background: var(--bcolor)
+    /* background: var(--bcolor) */
+    background-color: #fff6f4;
 }
 
 /* =============================== */
@@ -155,15 +156,18 @@ html {
         background-color: #26fa9a;
     }
 }
+
 @media(min-width: 980px) {
-    .index-banner{
+    .index-banner {
         height: 55vh;
     }
-    .index-banner p{
+
+    .index-banner p {
         padding: 0 30rem;
         line-height: 22px;
     }
-    .banner-button{
+
+    .banner-button {
         margin-top: 20px;
     }
 }
@@ -171,4 +175,47 @@ html {
 /* banner button ends */
 /* =============================== */
 /* Banner CSS End */
+/* =============================== */
+
+
+/* =============================== */
+/* Card CSS Starts */
+/* =============================== */
+
+.cards {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.maincard {
+    background: url("/static/check.jpg")no-repeat;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 10vh;
+    width: 30vw;
+    padding: 10vw;
+    background-position: center center;
+    background-size: cover;
+    filter: brightness(90%);
+    cursor: pointer;
+    border-radius: 10px;
+}
+.card-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-contents h2 {
+    text-align: center;
+    color: var(--hotish);
+    font-size: x-large;
+}
+.card-btn{
+    align-self: center;
+}
+
+/* =============================== */
+/* Card CSS End */
 /* =============================== */
