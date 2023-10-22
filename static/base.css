@@ -7,6 +7,7 @@
 
 :root {
     --bcolor: #00101F;
+    --footer-color: #010a12;
     --mainheading: #F4CE14;
     --para: #fff6f4;
     --hotish: #FF3FA4;
@@ -14,14 +15,15 @@
 }
 
 html {
-    font-size: 62.5%;
     background-color: var(--bcolor);
     overflow-x: hidden;
+    /* font-size: 62.5%; */
 }
+
 .header {
     background-color: var(--bcolor);
-    padding: 0 4.8rem;
-    height: 10rem;
+    padding: 0 48px;
+    height: 80px;
     /* line-height: 6.5rem; */
     display: flex;
     align-items: center;
@@ -29,7 +31,7 @@ html {
 }
 
 .header .logo {
-    height: 3rem;
+    height: 37px;
     color: var(--para);
 }
 
@@ -39,7 +41,7 @@ html {
 
 .navbar-list {
     display: flex;
-    gap: 4.8rem;
+    gap: 48px;
     list-style: none;
 }
 
@@ -48,7 +50,7 @@ html {
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: 500;
     color: var(--para);
     transition: all 0.3s;
@@ -66,13 +68,14 @@ html {
 }
 
 .mobile-icon-menu {
-    width: 4rem;
-    height: 4rem;
+    width: 40px;
+    height: 40px;
     color: var(--para);
 }
+
 .mobile-icon-close {
-    width: 4rem;
-    height: 4rem;
+    width: 40px;
+    height: 40px;
     color: var(--para);
 }
 
@@ -84,7 +87,7 @@ html {
 
 /* For small screen media starts*/
 /*For 980px starts */
-@media(max-width: 62em) {
+@media(max-width: 980px) {
     .hamburger {
         display: block;
         z-index: 999;
@@ -112,7 +115,7 @@ html {
         align-items: center;
 
         /* Transition */
-        transform:translateY(-100%);
+        transform: translateY(-100%);
         transition: all 1s linear;
 
         opacity: 0;
@@ -146,9 +149,9 @@ html {
 
 /*For 560px starts */
 
-@media (max-width: 35em) {
+@media (max-width: 560px) {
     .header {
-        padding: 0 2.4rem;
+        padding: 0 24px;
     }
 
     .header .logo {
@@ -159,3 +162,91 @@ html {
 /*For 980px ends */
 
 /* For small screen media ends*/
+
+
+/* =============================== */
+/* Footer CSS Starts */
+/* =============================== */
+.footer {
+    padding: 2rem 0 0;
+    height: 50vh;
+    background-color: var(--footer-color);
+    color: var(--para);
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer .fone {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+
+.footer .fone span {
+    color: var(--hotish);
+    font-weight: bold;
+}
+
+.footer .fone .footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer .fone .footer-links a {
+    text-decoration: none;
+    color: var(--para);
+    font-size: 30px;
+}
+
+.footer .fone .footer-links a:hover {
+    color: var(--mainheading);
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: var(--para);
+}
+
+.footer ul li a:hover {
+    color: var(--skyblue);
+}
+
+.footer-h3 {
+    text-align: center;
+    border-bottom: 4px solid var(--mainheading);
+    margin-bottom: 1rem;
+}
+
+/* footer css for small screen starts */
+@media(max-width: 980px) {
+    .footer{
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px 10px;
+    }
+    .footer-h3{
+        /* margin-top: 1rem; */
+        border: none;
+        text-align: start;
+        margin-bottom: 0;
+    }
+    /* .footer .fone .footer-links{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } */
+}
+/* footer css for small screen ends */
+
+/* =============================== */
+/* Footer CSS End */
+/* =============================== */
