@@ -1,5 +1,5 @@
+{% extends 'base.html' %}
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +10,12 @@
 </head>
 
 <body>
-    <h1>Hello jusk checking templates</h1>
+    {% block content %}
     <!-- <img src="{% static 'check.jpg'%}" alt=""> -->
+    <h1>Hello jusk checking templates</h1>
+    <h2>Hello</h2>
+    {% endblock %}
+
 </body>
 
 </html>
