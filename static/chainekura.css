@@ -1,15 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:sans-serif;
+    font-family: sans-serif;
 }
+
+
 :root {
     --bcolor: #00101F;
     --mainheading: #F4CE14;
     --para: #fff6f4;
     --hotish: #FF3FA4;
     --skyblue: #525FE1;
+}
+
+html {
+    background: var(--bcolor)
 }
 
 /* =============================== */
@@ -60,4 +66,109 @@
 
 /* =============================== */
 /* Button CSS End */
+/* =============================== */
+
+
+/* =============================== */
+/* Banner CSS starts */
+/* =============================== */
+
+.index-banner {
+    height: 40vh;
+    background-color: var(--bcolor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: bannerloop 20s linear infinite;
+}
+
+.index-banner h1 {
+    font-size: 48px;
+    color: var(--bcolor);
+}
+
+.index-banner h3 {
+    color: var(--bcolor);
+}
+
+.index-banner p {
+    color: var(--bcolor);
+    text-align: center;
+    padding: 10px 40px;
+}
+
+/* banner button starts */
+.banner-button {
+    background-color: var(--bcolor);
+    color: var(--para);
+    width: 8.5em;
+    height: 2.9em;
+    border: #3654ff 0.2em solid;
+    border-radius: 11px;
+    text-align: right;
+    transition: all 0.6s ease;
+}
+
+.banner-button:hover {
+    background-color: #2675be;
+    cursor: pointer;
+    color: var(--para);
+}
+
+.banner-button svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+}
+
+.banner-button:hover svg {
+    transform: translateX(5px);
+}
+
+.banner-button .text {
+    font-weight: bold;
+    margin: 0 1.5em
+}
+
+@keyframes bannerloop {
+    0% {
+        background-color: #26fa9a;
+    }
+
+    25% {
+        background-color: #fcee67;
+    }
+
+    50% {
+        background-color: #ff4081;
+    }
+
+    75% {
+        background-color: #18ffff;
+    }
+
+    100% {
+        background-color: #26fa9a;
+    }
+}
+@media(min-width: 980px) {
+    .index-banner{
+        height: 55vh;
+    }
+    .index-banner p{
+        padding: 0 30rem;
+        line-height: 22px;
+    }
+    .banner-button{
+        margin-top: 20px;
+    }
+}
+
+/* banner button ends */
+/* =============================== */
+/* Banner CSS End */
 /* =============================== */
