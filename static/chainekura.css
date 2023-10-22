@@ -157,6 +157,7 @@ html {
     }
 }
 
+/* for big screen */
 @media(min-width: 980px) {
     .index-banner {
         height: 55vh;
@@ -183,6 +184,7 @@ html {
 /* =============================== */
 
 .cards {
+
     padding: 10px;
     display: flex;
     justify-content: space-around;
@@ -196,11 +198,12 @@ html {
     padding: 10vw;
     background-position: center center;
     background-size: cover;
-    filter: brightness(90%);
+    filter: brightness(85%);
     cursor: pointer;
     border-radius: 10px;
 }
-.card-contents{
+
+.card-contents {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,10 +215,33 @@ html {
     color: var(--hotish);
     font-size: x-large;
 }
-.card-btn{
+
+.card-btn {
     align-self: center;
 }
 
 /* =============================== */
 /* Card CSS End */
 /* =============================== */
+/* for small screem */
+@media(max-width: 980px) {
+    .cards {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .maincard {
+        background: url("/static/check.jpg")no-repeat;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        height: 20vh;
+        width: 40vw;
+        padding: 10vw;
+        background-position: center center;
+        background-size: cover;
+        filter: brightness(85%);
+        cursor: pointer;
+        border-radius: 10px;
+    }
+}
