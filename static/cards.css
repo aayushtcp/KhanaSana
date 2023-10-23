@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+:root {
+    --bcolor: #00101F;
+    --mainheading: #F4CE14;
+    --para: #fff6f4;
+    --hotish: #FF3FA4;
+    --skyblue: #525FE1;
+}
+
+
+
+/* =============================== */
+/* Card CSS Starts */
+/* =============================== */
+
+.cards {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.maincard {
+    background: url("/static/check.jpg")no-repeat;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 10vh;
+    width: 30vw;
+    padding: 10vw;
+    background-position: center center;
+    background-size: cover;
+    filter: brightness(85%);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.card-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-contents h2 {
+    text-align: center;
+    color: var(--hotish);
+    font-size: x-large;
+}
+
+.card-btn {
+    align-self: center;
+}
+
+/* =============================== */
+/* Card CSS End */
+/* =============================== */
+/* for small screem */
+@media(max-width: 980px) {
+    .cards {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .maincard {
+        background: url("/static/check.jpg")no-repeat;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        height: 20vh;
+        width: 40vw;
+        padding: 10vw;
+        background-position: center center;
+        background-size: cover;
+        filter: brightness(85%);
+        cursor: pointer;
+        border-radius: 10px;
+    }
+}
+
+/* banner button starts */
+.banner-button {
+    background-color: var(--bcolor);
+    color: var(--para);
+    width: 8.5em;
+    height: 2.9em;
+    border: #3654ff 0.2em solid;
+    border-radius: 11px;
+    text-align: right;
+    transition: all 0.6s ease;
+}
+
+.banner-button:hover {
+    background-color: #2675be;
+    cursor: pointer;
+    color: var(--para);
+}
+
+.banner-button svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+}
+
+.banner-button:hover svg {
+    transform: translateX(5px);
+}
+
+.banner-button .text {
+    font-weight: bold;
+    margin: 0 1.5em
+}
