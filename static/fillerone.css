@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+:root {
+    --bcolor: #00101F;
+    --mainheading: #F4CE14;
+    --para: #fff6f4;
+    --hotish: #FF3FA4;
+    --skyblue: #525FE1;
+}
+html{
+    background: var(--bcolor)
+}
+/* ------------------------------ */
+/* Filler Css start */
+/* ------------------------------ */
+
+.filler-container{
+    padding: 8px 80px;
+    color: var(--para);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+.filler-container span{
+    color: var(--mainheading);
+    border-bottom: 3px dashed var(--hotish);
+}
+.filler-container p{
+    justify-content: center;
+}
+/* for small screen */
+@media(max-width: 750px) {
+    .filler-container{
+        padding: 5px 60px;
+    }
+}
+/* ------------------------------ */
+/* Filler Css end */
+/* ------------------------------ */

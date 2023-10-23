@@ -12,6 +12,7 @@
     --para: #fff6f4;
     --hotish: #FF3FA4;
     --skyblue: #525FE1;
+    --suntala: rgb(152,79,0);
 }
 
 html {
@@ -21,6 +22,9 @@ html {
 }
 
 .header {
+    position: sticky;
+    top: 0;
+    left: 0;
     background-color: var(--bcolor);
     padding: 0 48px;
     height: 80px;
@@ -28,8 +32,10 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1111;
+    /* border-bottom: 1px solid var(--para);
+    margin-bottom: 2rem; */
 }
-
 .header .logo {
     height: 37px;
     color: var(--para);
@@ -162,7 +168,6 @@ html {
 /*For 980px ends */
 
 /* For small screen media ends*/
-
 
 /* =============================== */
 /* Footer CSS Starts */

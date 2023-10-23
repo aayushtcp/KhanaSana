@@ -6,14 +6,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block base_style%}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    {% endblock base_style%}
     <title>Lyamma | Lyamma</title>
 </head>
 
 <body>
     {% block content %}
-    <!-- <img src="{% static 'check.jpg'%}" alt=""> -->
-    <h1>Hello jusk checking templates</h1>
-    <h2>Hello</h2>
+
+
+    <!-- Banner 1st for index starts -->
+    <hr>
+    <div class="index-banner">
+        <h3>Special Lyamma Mo:Mo</h3>
+        <h1>Delicious as fuck</h1>
+        <p>Ever wanted to show your Beatboxing Skills on Swissbeatbox? Submit your Video now to the Community section
+            where thousands of Beatbox fans will see it. The best videos will be featured regularly.</p>
+        <button class="banner-button" style="background-color: #00182F;">
+            <svg style="color: azure;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                </path>
+            </svg>
+
+            <div class="text" style="color: azure;">
+                Order
+            </div>
+        </button>
+    </div>
+    <!-- Banner 1st for index ends -->
+
+    <!-- Filler one starts -->
+    <div class="filler-container">
+        <h1>Are you <span>Foodie</span>?</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, debitis.</p>
+    </div>
+    <!-- Filler one ends -->
+
+    <!-- Group one Cards for index starts  -->
+    <div class="cards">
+        <!-- Card one starts -->
+        <div class="maincard">
+            <div class="card-contents">
+                <h2>Chicken Pizza</h2>
+                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+                <button class="banner-button card-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                        </path>
+                    </svg>
+                    <div class="text">
+                        Order
+                    </div>
+                </button>
+            </div>
+        </div>
+        <!-- Card one ends -->
+
+        <!-- Card two starts -->
+        <div class="maincard">
+            <div class="card-contents">
+                <h2>Buff Momo</h2>
+                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+                <button class="banner-button card-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                        </path>
+                    </svg>
+                    <div class="text">
+                        Order
+                    </div>
+                </button>
+            </div>
+        </div>
+        <!-- Card two ends -->
+
+        <!-- Card three starts -->
+        <div class="maincard">
+            <div class="card-contents">
+                <h2>Veg Chowmein</h2>
+                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+                <button class="banner-button card-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                        </path>
+                    </svg>
+                    <div class="text">
+                        Order
+                    </div>
+                </button>
+            </div>
+        </div>
+        <!-- Card three ends -->
+
+        <!-- Card four starts -->
+        <div class="maincard">
+            <div class="card-contents">
+                <h2>Buff Chowmein</h2>
+                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+                <button class="banner-button card-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                        </path>
+                    </svg>
+                    <div class="text">
+                        Order
+                    </div>
+                </button>
+            </div>
+        </div>
+        <!-- Card four ends -->
+    </div>
+
+    <!-- Group one Cards for index ends  -->
+
+
+
+    <!-- Banner for index starts -->
+    <hr>
+    <div class="index-banner">
+        <h3>Special Lyamma Mo:Mo</h3>
+        <h1>Delicious as fuck</h1>
+        <p>Ever wanted to show your Beatboxing Skills on Swissbeatbox? Submit your Video now to the Community section
+            where thousands of Beatbox fans will see it. The best videos will be featured regularly.</p>
+        <button class="banner-button" style="background-color: #00182F;">
+            <svg style="color: azure;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                </path>
+            </svg>
+
+            <div class="text" style="color: azure;">
+                Order
+            </div>
+        </button>
+    </div>
+    <!-- Banner for index ends -->
     {% endblock %}
 
 </body>
