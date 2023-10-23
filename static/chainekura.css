@@ -8,15 +8,17 @@
 
 :root {
     --bcolor: #00101F;
+    --footer-color: #010a12;
     --mainheading: #F4CE14;
     --para: #fff6f4;
     --hotish: #FF3FA4;
     --skyblue: #525FE1;
+    --suntala: rgb(152,79,0);
 }
 
 html {
-    /* background: var(--bcolor) */
-    background-color: #fff6f4;
+    background: var(--bcolor)
+        /* background-color: #fff6f4; */
 }
 
 /* =============================== */
@@ -246,3 +248,66 @@ html {
         border-radius: 10px;
     }
 }
+
+
+/* =============================== */
+/* Count card CSS Start */
+/* =============================== */
+
+.count-card {
+    padding: 10px;
+    color: var(--para);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    width: 55%;
+    border-radius: 5px;
+    box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
+    margin: auto;
+    background-color: var(--footer-color);
+}
+
+.count-card .count-card-left {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.count-card .count-card-right {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 17px;
+}
+
+.count-card .count-card-right i {
+    cursor: pointer;
+    padding: 2px;
+    border: 1px solid var(--para);
+}
+
+.count-card img {
+    width: 50px;
+    border: 1px solid var(--para);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 50px;
+}
+
+/* for small screen */
+@media(max-width: 980px) {
+    .count-card {
+        width: 90%;
+    }
+    .count-card .count-card-left h3{
+        font-size: 15px;
+    }
+    .count-card .count-card-right { 
+        gap: 10px;
+    }
+}
+
+/* =============================== */
+/* Count card CSS End */
+/* =============================== */
