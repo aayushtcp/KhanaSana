@@ -83,9 +83,25 @@
         <div class="modal">
             <span class="close" id="closeModal">&times;</span>
             <!-- Your sign-up form goes here -->
-            <h2>Sign Up</h2>
-            <form>
-                <!-- Form fields go here -->
+            
+            <form action="" method="post" class="signup">
+                <h2>Sign <span>Up</span></h2>
+                <div class="fieldd">
+                    <label for="">Username</label>
+                    <br>
+                    <input class="primary-input" type="text" name="username" id="username">
+                </div>
+                <div class="fieldd">
+                    <label for="">Password</label>
+                    <br>
+                    <input class="primary-input" type="password" name="password" id="password">
+                </div>
+                <div class="fieldd">
+                    <label for="">Confirm Password</label>
+                    <br>
+                    <input class="primary-input" type="password" name="cpassword" id="cpassword">
+                </div>
+                <input type="submit" value="Signup" name="" id="" class="button-79">
             </form>
         </div>
     </div>
@@ -115,20 +131,20 @@
         var modal = document.getElementById('modalOverlay');
         var openButton = document.getElementById('show-signup');
         var closeButton = document.getElementById('closeModal');
-        
+
         // Open the modal when the "Sign Up" button is clicked
-        openButton.addEventListener('click', function() {
+        openButton.addEventListener('click', function () {
             modal.style.display = 'block';
             // alert('Sign Up');
         });
-        
+
         // Close the modal when the close button is clicked
-        closeButton.addEventListener('click', function() {
+        closeButton.addEventListener('click', function () {
             modal.style.display = 'none';
         });
-        
+
         // Close the modal when the overlay (outside the modal) is clicked
-        modal.addEventListener('click', function(event) {
+        modal.addEventListener('click', function (event) {
             if (event.target === modal) {
                 modal.style.display = 'none';
             }

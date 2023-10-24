@@ -314,6 +314,9 @@ html {
 /* =============================== */
 /* Footer CSS End */
 /* =============================== */
+/* =============================== */
+/* Sign up Modal CSS Start */
+/* =============================== */
 /* Styling for the overlay */
 .overlay {
     display: none;
@@ -328,12 +331,15 @@ html {
 
 /* Styling for the modal */
 .modal {
+    height: 55vh;
+    width: 30vw;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: var(--footer-color);
     padding: 20px;
+    color: var(--para);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     z-index: 2;
@@ -345,4 +351,105 @@ html {
     top: 10px;
     right: 10px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 30px;
 }
+
+.close:hover {
+    color: red;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+form span {
+    color: var(--hotish);
+}
+
+form .primary-input {
+    height: 40px;
+    width: 18vw;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    color: var(--footer-color);
+    border: none;
+    border-radius: 7px;
+}
+
+/* =============================== */
+/* Sign up Modal CSS Start */
+/* =============================== */
+/* =============================== */
+/* Sign up Button CSS Start */
+/* =============================== */
+
+/* CSS */
+.button-79 {
+    backface-visibility: hidden;
+    background: var(--skyblue);
+    border: 0;
+    border-radius: .375rem;
+    box-sizing: border-box;
+    color: var(--para);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: -.01em;
+    line-height: 1;
+    padding: 1rem 1.25rem;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transform: translateZ(0) scale(1);
+    transition: transform .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-79:disabled {
+    color: #787878;
+    cursor: auto;
+}
+
+.button-79:not(:disabled):hover {
+    transform: scale(1.05);
+}
+
+.button-79:not(:disabled):hover:active {
+    transform: scale(1.05) translateY(.125rem);
+}
+
+.button-79:focus {
+    outline: 0 solid transparent;
+}
+
+.button-79:focus:before {
+    border-width: .125rem;
+    content: "";
+    left: calc(-1*.375rem);
+    pointer-events: none;
+    position: absolute;
+    top: calc(-1*.375rem);
+    transition: border-radius;
+    user-select: none;
+}
+
+.button-79:focus:not(:focus-visible) {
+    outline: 0 solid transparent;
+}
+
+.button-79:not(:disabled):active {
+    transform: translateY(.125rem);
+}
+
+/* =============================== */
+/* Sign up Button CSS End */
+/* =============================== */
