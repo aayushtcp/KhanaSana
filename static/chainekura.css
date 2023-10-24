@@ -195,7 +195,7 @@ html {
 
 .maincard {
     background: url("/static/check.jpg")no-repeat;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
     height: 10vh;
     width: 30vw;
     padding: 10vw;
@@ -237,7 +237,7 @@ html {
 
     .maincard {
         background: url("/static/check.jpg")no-repeat;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
         height: 20vh;
         width: 40vw;
         padding: 10vw;

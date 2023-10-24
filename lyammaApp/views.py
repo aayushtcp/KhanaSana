@@ -23,6 +23,7 @@ def handleSignup(request):
         myuser = User.objects.create_user(username,email,password)
         myuser.save();
         messages.success(request, 'Your account has been successfully created!');
+        print(f"Hello {username}")
         return redirect('/')
     else:
         return HttpResponse("404-Not Allowed") 
