@@ -78,34 +78,40 @@
 
     <!-- Footer HTML Ends -->
 
-    <!-- Login form starts -->
+    <!-- Signup form starts -->
     <div class="overlay" id="modalOverlay">
         <div class="modal">
             <span class="close" id="closeModal">&times;</span>
             <!-- Your sign-up form goes here -->
             
-            <form action="" method="post" class="signup">
+            <form action="/signup" method="post">
+                {% csrf_token %}
                 <h2>Sign <span>Up</span></h2>
                 <div class="fieldd">
                     <label for="">Username</label>
                     <br>
-                    <input class="primary-input" type="text" name="username" id="username">
+                    <input class="primary-input" type="text" name="username" id="username" !importent>
+                </div>
+                <div class="fieldd">
+                    <label for="">Email</label>
+                    <br>
+                    <input class="primary-input" type="email" name="email" id="email" !importent>
                 </div>
                 <div class="fieldd">
                     <label for="">Password</label>
                     <br>
-                    <input class="primary-input" type="password" name="password" id="password">
+                    <input class="primary-input" type="password" name="password" id="password" !importent>
                 </div>
                 <div class="fieldd">
                     <label for="">Confirm Password</label>
                     <br>
-                    <input class="primary-input" type="password" name="cpassword" id="cpassword">
+                    <input class="primary-input" type="password" name="cpassword" id="cpassword" !importent>
                 </div>
                 <input type="submit" value="Signup" name="" id="" class="button-79">
             </form>
         </div>
     </div>
-    <!-- login form ends -->
+    <!-- Signup form ends -->
 
 
     <!-- Java script section starts -->

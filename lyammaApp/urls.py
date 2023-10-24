@@ -18,4 +18,5 @@ from django.urls import path, include
 from lyammaApp import views
 urlpatterns = [
     path("", views.index, name="index"),
+    path("/signup", views.handleSignup, name="signup"),
 ]
