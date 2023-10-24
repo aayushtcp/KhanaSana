@@ -253,7 +253,12 @@ html {
 /* =============================== */
 /* Count card CSS Start */
 /* =============================== */
-
+.count-container{
+    display: flex;
+    /* display: -ms-grid; */
+    flex-direction: column;
+    gap: 1rem;
+}
 .count-card {
     padding: 10px;
     color: var(--para);
@@ -291,7 +296,7 @@ html {
 .count-card img {
     width: 50px;
     border: 1px solid var(--para);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
     height: 50px;
 }
 

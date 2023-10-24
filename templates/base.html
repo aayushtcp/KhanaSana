@@ -23,13 +23,15 @@
                 <li><a class="nav-links" href="#">About</a></li>
                 <li><a class="nav-links" href="#">Foods</a></li>
                 <li><a class="nav-links" href="#">Contact</a></li>
+                <button id="" class="button" style="vertical-align:middle"><span>Login</span></button>
+                <button id="show-signup" class="button" style="vertical-align:middle"><span>Signup</span></button>
             </ul>
         </nav>
         <div class="hamburger">
             <ion-icon name="menu-outline" class="mobile-icon-menu"></ion-icon>
             <ion-icon name="close-outline" class="mobile-icon-close"></ion-icon>
         </div>
-    </header>   
+    </header>
 
     {% block content %} {% endblock %}
     <!-- Footer HTML Starts -->
@@ -73,9 +75,21 @@
         </div>
     </footer>
     <hr>
+
     <!-- Footer HTML Ends -->
 
-
+    <!-- Login form starts -->
+    <div class="overlay" id="modalOverlay">
+        <div class="modal">
+            <span class="close" id="closeModal">&times;</span>
+            <!-- Your sign-up form goes here -->
+            <h2>Sign Up</h2>
+            <form>
+                <!-- Form fields go here -->
+            </form>
+        </div>
+    </div>
+    <!-- login form ends -->
 
 
     <!-- Java script section starts -->
@@ -83,6 +97,44 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="{%static 'base.js' %}"></script>
+
+    <!-- signup popup script starts -->
+    <!-- <script>
+        document.querySelector("#show-login").addEventListener("click", function () {
+            // document.querySelector(".popup").classList.add("active");
+            alert("Please");
+        });
+
+        document.querySelector(".popup .close-btn").addEventListener("click", function () {
+            document.querySelector(".popup").classList.remove("active");
+        });
+    </script> -->
+
+    <script>
+        // Get references to the modal and overlay
+        var modal = document.getElementById('modalOverlay');
+        var openButton = document.getElementById('show-signup');
+        var closeButton = document.getElementById('closeModal');
+        
+        // Open the modal when the "Sign Up" button is clicked
+        openButton.addEventListener('click', function() {
+            modal.style.display = 'block';
+            // alert('Sign Up');
+        });
+        
+        // Close the modal when the close button is clicked
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        // Close the modal when the overlay (outside the modal) is clicked
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+    <!-- signup popup script ends -->
 </body>
 {% endblock %}
 

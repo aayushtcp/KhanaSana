@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 #For index Page / Landing Page / Home Page
 def index(request):
-    return render(request, 'chainekura.html')
+    return render(request, 'index.html')
