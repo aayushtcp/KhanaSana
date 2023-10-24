@@ -2,6 +2,9 @@
 /* Filler Css start */
 /* ------------------------------ */
 
+html{
+    background: var(--bcolor);
+}
 .filler-container {
     padding: 8px 80px;
     color: var(--para);

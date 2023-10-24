@@ -18,7 +18,19 @@ def handleSignup(request):
         cpassword = request.POST['cpassword']
         
         #Check for errors
-        #
+        if len(username)>10:
+            messages.warning(request,"Username length must be less than 10 characters!")
+            return redirect("/")
+        
+        if not username.isalnum():
+            messages.success(request,"Username should only contain letters and numbers!")
+            return redirect("/")
+        
+        if password!=cpassword:
+            messages.error(request,"Password do not match!")
+            return redirect("/")
+            
+        
         #Create the user
         myuser = User.objects.create_user(username,email,password)
         myuser.save();

@@ -453,3 +453,15 @@ form .primary-input {
 /* =============================== */
 /* Sign up Button CSS End */
 /* =============================== */
+.messages{
+    text-align: center;
+}
+.error{
+    color: red;
+}
+.success{
+    color: greenyellow;
+}
+.warning{
+    color: rgba(255, 220, 79, 0.923);
+}

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'base.css' %}">
     {% endblock base_style%}
     <script src="https://kit.fontawesome.com/c57b7eb6b9.js" crossorigin="anonymous"></script>
+  </head>
     <title>Base | File</title>
 </head>
 
@@ -23,8 +24,8 @@
                 <li><a class="nav-links" href="#">About</a></li>
                 <li><a class="nav-links" href="#">Foods</a></li>
                 <li><a class="nav-links" href="#">Contact</a></li>
-                <button id="" class="button" style="vertical-align:middle"><span>Login</span></button>
                 <button id="show-signup" class="button" style="vertical-align:middle"><span>Signup</span></button>
+                <button id="show-login" class="button" style="vertical-align:middle"><span>Login</span></button>
             </ul>
         </nav>
         <div class="hamburger">
@@ -32,7 +33,11 @@
             <ion-icon name="close-outline" class="mobile-icon-close"></ion-icon>
         </div>
     </header>
-
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
     {% block content %} {% endblock %}
     <!-- Footer HTML Starts -->
     <hr>
@@ -83,29 +88,29 @@
         <div class="modal">
             <span class="close" id="closeModal">&times;</span>
             <!-- Your sign-up form goes here -->
-            
+
             <form action="/signup/" method="post">
                 {% csrf_token %}
                 <h2>Sign <span>Up</span></h2>
                 <div class="fieldd">
                     <label for="">Username</label>
                     <br>
-                    <input class="primary-input" type="text" name="username" id="username" !importent>
+                    <input class="primary-input" type="text" name="username" id="username" required>
                 </div>
                 <div class="fieldd">
                     <label for="">Email</label>
                     <br>
-                    <input class="primary-input" type="email" name="email" id="email" !importent>
+                    <input class="primary-input" type="email" name="email" id="email" required>
                 </div>
                 <div class="fieldd">
                     <label for="">Password</label>
                     <br>
-                    <input class="primary-input" type="password" name="password" id="password" !importent>
+                    <input class="primary-input" type="password" name="password" id="password" required>
                 </div>
                 <div class="fieldd">
                     <label for="">Confirm Password</label>
                     <br>
-                    <input class="primary-input" type="password" name="cpassword" id="cpassword" !importent>
+                    <input class="primary-input" type="password" name="cpassword" id="cpassword" required>
                 </div>
                 <input type="submit" value="Signup" name="" id="" class="button-79">
             </form>
@@ -113,6 +118,31 @@
     </div>
     <!-- Signup form ends -->
 
+
+    <!-- Login form starts -->
+    <div class="overlay" id="modalOverlay2">
+        <div class="modal">
+            <span class="close" id="closeModal2">&times;</span>
+            <!-- Your sign-up form goes here -->
+
+            <form action="/login/" method="post">
+                {% csrf_token %}
+                <h2>Log <span>In</span></h2>
+                <div class="fieldd">
+                    <label for="">Username</label>
+                    <br>
+                    <input class="primary-input" type="text" name="username" id="username" required>
+                </div>
+                <div class="fieldd">
+                    <label for="">Password</label>
+                    <br>
+                    <input class="primary-input" type="password" name="password" id="password" requires>
+                </div>
+                <input type="submit" value="Login" name="" id="" class="button-79">
+            </form>
+        </div>
+    </div>
+    <!-- Login form ends -->
 
     <!-- Java script section starts -->
 
@@ -141,7 +171,6 @@
         // Open the modal when the "Sign Up" button is clicked
         openButton.addEventListener('click', function () {
             modal.style.display = 'block';
-            // alert('Sign Up');
         });
 
         // Close the modal when the close button is clicked
@@ -157,6 +186,34 @@
         });
     </script>
     <!-- signup popup script ends -->
+
+
+    <!-- login popup script starts -->
+    <script>
+        // Get references to the modal and overlay
+        var modal2 = document.getElementById('modalOverlay2');
+        var openButton2 = document.getElementById('show-login');
+        var closeButton2 = document.getElementById('closeModal2');
+
+        // Open the modal when the "Sign Up" button is clicked
+        openButton2.addEventListener('click', function () {
+            modal2.style.display = 'block';
+            // alert('Login');
+        });
+
+        // Close the modal when the close button is clicked
+        closeButton2.addEventListener('click', function () {
+            modal2.style.display = 'none';
+        });
+
+        // Close the modal when the overlay (outside the modal) is clicked
+        modal2.addEventListener('click', function (event) {
+            if (event.target === modal2) {
+                modal2.style.display = 'none';
+            }
+        });
+    </script>
+    <!-- login popup script ends -->
 </body>
 {% endblock %}
 
