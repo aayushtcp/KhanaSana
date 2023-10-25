@@ -26,8 +26,9 @@
                 <li><a class="navkolinks" href="#">Contact</a></li>
                 {% if user.is_authenticated %}
                 <h3 class="userr" id="greet">
-                    ID: 
-                    <span class="loggedinUserSpan">{{request.user}}</span></h3>
+                    ID:
+                    <span class="loggedinUserSpan">{{request.user}}</span>
+                </h3>
                 <button id="show-logout" class="button" style="vertical-align:middle"><span>Logout</span></button>
                 {% else %}
                 <button id="show-signup" class="button" style="vertical-align:middle"><span>Signup</span></button>
@@ -222,7 +223,13 @@
             }
         });
     </script>
+
     <!-- login popup script ends -->
+    <script>
+        document.getElementById("show-logout").onclick = function () {
+            location.href = "/logout";
+        };
+    </script>
 </body>
 {% endblock %}
 
