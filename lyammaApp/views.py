@@ -12,7 +12,6 @@ from django.contrib import messages
 def index(request):
     return render(request, 'index.html')
 
-
 def handleSignup(request):
     if request.method == 'POST':
         # Get the post parameters
@@ -38,6 +37,7 @@ def handleSignup(request):
 
         # Create the user
         myuser = User.objects.create_user(username, email, password)
+        # myuser.is_staff = True
         myuser.save()
         messages.success(
             request, 'Your account has been successfully created!')

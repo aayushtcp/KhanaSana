@@ -14,6 +14,9 @@
     --skyblue: #525FE1;
     --suntala: rgb(152, 79, 0);
 }
+body{
+    background-color: var(--bcolor) !important;
+}
 
 /* =============================== */
 /* Button CSS start */
@@ -76,7 +79,7 @@ html {
     left: 0;
     background-color: var(--bcolor);
     padding: 0 48px;
-    height: 80px;
+    height: 70px;
     /* line-height: 6.5rem; */
     display: flex;
     align-items: center;
@@ -101,12 +104,12 @@ html {
     list-style: none;
 }
 
-.nav-links {
+.navkolinks {
     padding: 10px;
 }
 
-.nav-links:link,
-.nav-links:visited {
+.navkolinks:link,
+.navkolinks:visited {
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
@@ -116,8 +119,8 @@ html {
     transition: all 0.3s;
 }
 
-.nav-links:hover,
-.nav-links:active {
+.navkolinks:hover,
+.navkolinks:active {
     color: var(--mainheading);
 }
 
@@ -144,10 +147,23 @@ html {
     display: none;
     /* color: var(--para); */
 }
+.userr{
+    color: var(--hotish);
+    /* font-size: small; */
+    font-weight: bold;
+    line-height: 40px;
+}
+.loggedinUserSpan{    
+    /* color: #6572ff; */
+    color: var(--mainheading);
+}
 
 /* For small screen media starts*/
 /*For 980px starts */
 @media(max-width: 980px) {
+    .userr{
+        display: none;
+    }
     .hamburger {
         display: block;
         z-index: 999;

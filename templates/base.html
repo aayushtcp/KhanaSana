@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="{% static 'base.css' %}">
     {% endblock base_style%}
     <script src="https://kit.fontawesome.com/c57b7eb6b9.js" crossorigin="anonymous"></script>
-  </head>
-    <title>Base | File</title>
+</head>
+<title>Base | File</title>
 </head>
 
 <body>
@@ -20,12 +20,19 @@
         <h1 class="logo">Lyamma</span></h1>
         <nav class="navbar">
             <ul class="navbar-list">
-                <li><a class="nav-links" href="#">Home</a></li>
-                <li><a class="nav-links" href="#">About</a></li>
-                <li><a class="nav-links" href="#">Foods</a></li>
-                <li><a class="nav-links" href="#">Contact</a></li>
+                <li><a class="navkolinks" href="#">Home</a></li>
+                <li><a class="navkolinks" href="#">About</a></li>
+                <li><a class="navkolinks" href="#">Foods</a></li>
+                <li><a class="navkolinks" href="#">Contact</a></li>
+                {% if user.is_authenticated %}
+                <h3 class="userr" id="greet">
+                    ID: 
+                    <span class="loggedinUserSpan">{{request.user}}</span></h3>
+                <button id="show-logout" class="button" style="vertical-align:middle"><span>Logout</span></button>
+                {% else %}
                 <button id="show-signup" class="button" style="vertical-align:middle"><span>Signup</span></button>
                 <button id="show-login" class="button" style="vertical-align:middle"><span>Login</span></button>
+                {% endif %}
             </ul>
         </nav>
         <div class="hamburger">
@@ -37,7 +44,7 @@
     <ul class="messages">
         {% for message in messages %}
         <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-        {% endfor %}
+            {% endfor %}
     </ul>
     {% block content %} {% endblock %}
     <!-- Django message system ends-->

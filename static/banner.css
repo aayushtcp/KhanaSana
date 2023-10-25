@@ -14,9 +14,9 @@
     --skyblue: #525FE1;
 }
 
-html {
-    /* background: var(--bcolor) */
-    background-color: #fff6f4;
+body {
+    background: var(--bcolor) !important;
+    /* background-color: #fff6f4; */
 }
 
 

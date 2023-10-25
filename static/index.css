@@ -2,8 +2,8 @@
 /* Filler Css start */
 /* ------------------------------ */
 
-html{
-    background: var(--bcolor);
+body{
+    background: var(--bcolor) !important;
 }
 .filler-container {
     padding: 8px 80px;
