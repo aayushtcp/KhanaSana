@@ -33,12 +33,14 @@
             <ion-icon name="close-outline" class="mobile-icon-close"></ion-icon>
         </div>
     </header>
+    <!-- Django message system starts-->
     <ul class="messages">
         {% for message in messages %}
         <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-            {% endfor %}
+        {% endfor %}
     </ul>
     {% block content %} {% endblock %}
+    <!-- Django message system ends-->
     <!-- Footer HTML Starts -->
     <hr>
     <footer class="footer">
@@ -131,12 +133,12 @@
                 <div class="fieldd">
                     <label for="">Username</label>
                     <br>
-                    <input class="primary-input" type="text" name="username" id="username" required>
+                    <input class="primary-input" type="text" name="loginusername" id="loginusername" required>
                 </div>
                 <div class="fieldd">
                     <label for="">Password</label>
                     <br>
-                    <input class="primary-input" type="password" name="password" id="password" requires>
+                    <input class="primary-input" type="password" name="loginpassword" id="loginpassword" requires>
                 </div>
                 <input type="submit" value="Login" name="" id="" class="button-79">
             </form>

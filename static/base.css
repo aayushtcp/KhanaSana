@@ -301,12 +301,6 @@ html {
         text-align: start;
         margin-bottom: 0;
     }
-
-    /* .footer .fone .footer-links{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    } */
 }
 
 /* footer css for small screen ends */
@@ -314,6 +308,8 @@ html {
 /* =============================== */
 /* Footer CSS End */
 /* =============================== */
+
+
 /* =============================== */
 /* Sign up Modal CSS Start */
 /* =============================== */
@@ -385,6 +381,8 @@ form .primary-input {
 /* =============================== */
 /* Sign up Modal CSS Start */
 /* =============================== */
+
+
 /* =============================== */
 /* Sign up Button CSS Start */
 /* =============================== */
@@ -453,15 +451,27 @@ form .primary-input {
 /* =============================== */
 /* Sign up Button CSS End */
 /* =============================== */
-.messages{
+
+
+/* =============================== */
+/* Django messages CSS Starts */
+/* =============================== */
+.messages {
     text-align: center;
 }
-.error{
+
+.error {
     color: red;
 }
-.success{
+
+.success {
     color: greenyellow;
 }
-.warning{
+
+.warning {
     color: rgba(255, 220, 79, 0.923);
 }
+
+/* =============================== */
+/* Django messages CSS End */
+/* =============================== */
