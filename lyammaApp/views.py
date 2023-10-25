@@ -45,6 +45,8 @@ def handleSignup(request):
         return redirect('/')
     else:
         return HttpResponse("404-Not Allowed")
+    
+
 
 
 def handleLogin(request):
@@ -63,10 +65,13 @@ def handleLogin(request):
         else:
             messages.error(
                 request, "Invalid credentials, Please try again!")
-            return redirect("/") #redirect on home
-            
+            return redirect("/")  # redirect on home
+    return HttpResponse('$404- dont try be cool!')
     # Check for errors
 
 
 def handleLogout(request):
-    pass
+    logout(request)
+    messages.success(
+        request, "You are Logged Out!")
+    return redirect("/")  # redirect on home
