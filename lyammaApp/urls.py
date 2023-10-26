@@ -21,4 +21,5 @@ urlpatterns = [
     path("signup/", views.handleSignup, name="signup"),
     path("login/", views.handleLogin, name="login"),
     path("logout/", views.handleLogout, name="logout"),
+    path("partnerrequest/", views.partnerrequest, name="partnerrequest"),
 ]

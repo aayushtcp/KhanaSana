@@ -348,6 +348,7 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
+    gap: 20px;
     justify-content: space-between;
 }
 
@@ -367,6 +368,7 @@ body {
     height:30%;
     width: 100%;
     font-weight: bold;
+    background-color: #d0d0d0;
     font-size: 20px;
     padding: 10px;
     color: var(--footer-color);

@@ -169,31 +169,31 @@
             <span class="close" id="closeModal3">&times;</span>
             <!-- Your sign-up form goes here -->
             <div class="partner-form">
-                <form action="" method="post">
-                    <!-- {% csrf_token %} -->
+                <form action="/partnerrequest/" method="post">
+                    {% csrf_token %}
                     <h2>Join <span>Us</span></h2>
                     <div class="main-combo-box">
                         <div class="div-left">
                             <label for="fullname">Fullname*</label>
                             <br>
-                            <input class="combo-inputs" type="text" name="" id="">
+                            <input class="combo-inputs" type="text" name="fullname" id="">
                         </div>
                         <div class="div-right">
                             <label for="fullname">Restaurant Name*</label>
                             <br>
-                            <input class="combo-inputs" type="text" name="" id="">
+                            <input class="combo-inputs" type="text" name="restaurantname" id="">
                         </div>
                     </div>
                     <div class="main-combo-box">
                         <div class="div-left">
                             <label for="fullname">Phone Number*</label>
                             <br>
-                            <input class="combo-inputs" type="phone" name="" id="">
+                            <input class="combo-inputs" type="phone" name="phone" id="">
                         </div>
                         <div class="div-right">
                             <label for="fullname">Email*</label>
                             <br>
-                            <input class="combo-inputs" type="email" name="" id="">
+                            <input class="combo-inputs" type="email" name="email" id="">
                         </div>
                     </div>
                     

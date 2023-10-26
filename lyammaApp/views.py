@@ -3,7 +3,7 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-
+from .models import PartnerRequest
 # Create your views here.
 
 # For index Page / Landing Page / Home Page
@@ -75,3 +75,19 @@ def handleLogout(request):
     messages.success(
         request, "You are Logged Out!")
     return redirect("/")  # redirect on home
+
+def partnerrequest(request):
+    if request.method == "POST":
+        fullname = request.POST["fullname"]
+        restaurantname = request.POST["restaurantname"]
+        phone = request.POST["phone"]
+        email = request.POST["email"]
+        message = request.POST["message"]
+        print(fullname, restaurantname, phone, email, message)
+        # ==============At production remove print and un-comment below three lines===============================
+        # partnerrequest = partnerrequest(
+        #     fullname=fullname, restaurantname = restaurantname, phone=phone, email=email, message = message
+        # )
+        # partnerrequest.save()
+        # =========================================================================================================
+    return redirect("/")
