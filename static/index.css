@@ -291,6 +291,9 @@ body {
     font-family: 'Courier New', monospace;
     font-weight: lighter;
 }
+.partner span{
+    border-bottom: 3px solid var(--mainheading);
+}
 
 /* Styling for the overlay3 */
 .overlay3 {

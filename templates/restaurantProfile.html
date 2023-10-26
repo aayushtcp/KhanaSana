@@ -1,0 +1,104 @@
+{% extends 'base.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block base_style%}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'restaurantProfile.css' %}">
+    {% endblock base_style%}
+    <title>Restaurant | Profile</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="grid-container">
+        <div class="main" style="background-image: url(/static/check.jpg);">
+            <!-- <img src="{% static 'check.jpg' %}" alt=""> -->
+        </div>
+        <div class="items">
+            <!-- Count card starts -->
+            <div class="count-container">
+                <h2>Our Menu</h2>
+                <div class="count-card">
+                    <div class="count-card-left">
+                        <h3>1.</h3>
+                        <img src="{% static 'check.jpg'%}" alt="khana">
+                        <h3>Chicken Mo:Mo</h3>
+                    </div>
+                    <div class="count-card-right">
+                        <i class="fa-solid fa-minus"></i>
+                        <div class="live-count">
+                            <h3>123</h3>
+                        </div>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="count-card">
+                    <div class="count-card-left">
+                        <h3>2.</h3>
+                        <img src="{% static 'check.jpg'%}" alt="khana">
+                        <h3>Chicken Mo:Mo</h3>
+                    </div>
+                    <div class="count-card-right">
+                        <i class="fa-solid fa-minus"></i>
+                        <div class="live-count">
+                            <h3>123</h3>
+                        </div>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="count-card">
+                    <div class="count-card-left">
+                        <h3>3.</h3>
+                        <img src="{% static 'check.jpg'%}" alt="khana">
+                        <h3>Chicken Mo:Mo</h3>
+                    </div>
+                    <div class="count-card-right">
+                        <i class="fa-solid fa-minus"></i>
+                        <div class="live-count">
+                            <h3>123</h3>
+                        </div>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <div class="count-card">
+                    <div class="count-card-left">
+                        <h3>4.</h3>
+                        <img src="{% static 'check.jpg'%}" alt="khana">
+                        <h3>Chicken Mo:Mo</h3>
+                    </div>
+                    <div class="count-card-right">
+                        <i class="fa-solid fa-minus"></i>
+                        <div class="live-count">
+                            <h3>123</h3>
+                        </div>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Count card ends -->
+
+        </div>
+        <div class="cart">
+            <div class="sticky-cart">
+                <h2>Order Summary</h2>
+                <ul>
+                    <li>momo</li>
+                    <li>momo</li>
+                    <li>momo</li>
+                    <li>momo</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    {% endblock %}
+</body>
+
+</html>
+static\restaurantProfile.css

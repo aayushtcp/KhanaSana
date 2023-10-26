@@ -91,3 +91,7 @@ def partnerrequest(request):
         # partnerrequest.save()
         # =========================================================================================================
     return redirect("/")
+
+
+def restaurantProfile(request):
+    return render(request, 'restaurantProfile.html')

@@ -22,4 +22,5 @@ urlpatterns = [
     path("login/", views.handleLogin, name="login"),
     path("logout/", views.handleLogout, name="logout"),
     path("partnerrequest/", views.partnerrequest, name="partnerrequest"),
+    path("restaurantProfile/", views.restaurantProfile, name="restaurantProfile"),
 ]
