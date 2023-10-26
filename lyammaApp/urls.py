@@ -21,6 +21,8 @@ urlpatterns = [
     path("signup/", views.handleSignup, name="signup"),
     path("login/", views.handleLogin, name="login"),
     path("logout/", views.handleLogout, name="logout"),
+    path("restaurantlist/", views.restaurantlist, name="restaurantlist"),
     path("partnerrequest/", views.partnerrequest, name="partnerrequest"),
     path("restaurantProfile/", views.restaurantProfile, name="restaurantProfile"),
+    # path("<str:slug>/", views.restaurantProfile, name="restaurantProfile"),
 ]

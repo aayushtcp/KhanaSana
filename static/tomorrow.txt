@@ -1,5 +1,5 @@
 1. migrate work --done
 2. views fetch -- done
-3. make restaurant profile frontend
+3. make restaurant profile frontend --done
 4. setup slup url
 5. apply fetch data to frontend

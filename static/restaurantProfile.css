@@ -27,7 +27,6 @@
 }
 
 .main {
-    /* background-color: var(--hotish); */
     grid-area: main;
 }
 .main{

@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block base_style%}
+    {{ block.super }}
+    <style>
+        :root {
+            --bcolor: #00101F;
+            --footer-color: #010a12;
+            --mainheading: #F4CE14;
+            --para: #fff6f4;
+            --hotish: #FF3FA4;
+            --skyblue: #525FE1;
+            --suntala: rgb(152, 79, 0);
+        }
+
+        body {
+            background: var(--bcolor) !important;
+            color: var(--para);
+        }
+    </style>
+    {% endblock base_style%}
+    <title>Restaurant | Profile</title>
+</head>
+
+<body>
+    {% block content %}
+    <h2>Links</h2>
+
+    {% for items in allItems %}
+    <ul>
+        <li><a href="">{{items.itemname}}</a></li>
+    </ul>
+    {% endfor %}
+    {% endblock %}
+
+</body>
+
+</html>
