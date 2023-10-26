@@ -152,6 +152,63 @@
         </button>
     </div>
     <!-- Banner for index ends -->
+
+    <!-- Partner with us html start -->
+    <!-- HTML !-->
+    <div class="partner">
+        <h2>Partner with us</h2>
+        <h3>List your restaurant with us and Reach several new customers through us!</h3>
+        <p>Get your menu items delivered to our customer's door-step.</p>
+        <button class="button-40" role="button" id="partner-btn">Send a Request</button>
+    </div>
+
+
+    <!-- Partner form starts -->
+    <div class="overlay3" id="modalOverlay3">
+        <div class="modal3">
+            <span class="close" id="closeModal3">&times;</span>
+            <!-- Your sign-up form goes here -->
+            <div class="partner-form">
+                <form action="" method="post">
+                    <!-- {% csrf_token %} -->
+                    <h2>Join <span>Us</span></h2>
+                    <div class="main-combo-box">
+                        <div class="div-left">
+                            <label for="fullname">Fullname*</label>
+                            <br>
+                            <input class="combo-inputs" type="text" name="" id="">
+                        </div>
+                        <div class="div-right">
+                            <label for="fullname">Restaurant Name*</label>
+                            <br>
+                            <input class="combo-inputs" type="text" name="" id="">
+                        </div>
+                    </div>
+                    <div class="main-combo-box">
+                        <div class="div-left">
+                            <label for="fullname">Phone Number*</label>
+                            <br>
+                            <input class="combo-inputs" type="phone" name="" id="">
+                        </div>
+                        <div class="div-right">
+                            <label for="fullname">Email*</label>
+                            <br>
+                            <input class="combo-inputs" type="email" name="" id="">
+                        </div>
+                    </div>
+                    
+                    <textarea name="message" placeholder="Enter you message here ..." id="" cols="30" rows="8" required></textarea>
+                    <input type="submit" value="Submit Request" name="" id="" class="button-79">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Partner form ends -->
+
+
+
+    <script src="{%static 'index.js' %}"></script>
+    <!-- Partner with us html start -->
     {% endblock %}
 
 </body>

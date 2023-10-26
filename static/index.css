@@ -2,9 +2,20 @@
 /* Filler Css start */
 /* ------------------------------ */
 
-body{
+:root {
+    --bcolor: #00101F;
+    --footer-color: #010a12;
+    --mainheading: #F4CE14;
+    --para: #fff6f4;
+    --hotish: #FF3FA4;
+    --skyblue: #525FE1;
+    --suntala: rgb(152, 79, 0);
+}
+
+body {
     background: var(--bcolor) !important;
 }
+
 .filler-container {
     padding: 8px 80px;
     color: var(--para);
@@ -213,3 +224,255 @@ body{
         border-radius: 10px;
     }
 }
+
+/* Send a request button CSS starts */
+/* CSS */
+.button-40 {
+    background-color: #111827;
+    border: 1px solid var(--mainheading);
+    border-radius: .75rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 30%;
+    margin-bottom: 1rem;
+    transition: 0.4s ease-in-out;
+}
+
+.button-40:hover {
+    background-color: #374151;
+    transform: rotate(8deg);
+}
+
+.button-40:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+    .button-40 {
+        padding: .75rem 1.5rem;
+    }
+}
+
+/* Send a Request Button CSS ends */
+
+
+/* Partner section css starts */
+.partner {
+    color: var(--para);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--footer-color);
+    padding: 10px;
+    margin: 0 auto 1rem;
+    width: 40%;
+    border-radius: 7px;
+}
+
+.partner h3 {
+    font-family: 'Courier New', monospace;
+    font-weight: lighter;
+}
+
+/* Styling for the overlay3 */
+.overlay3 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+/* Styling for the modal3 */
+.modal3 {
+    height: 82vh;
+    width: 45vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    background-color: var(--footer-color);
+    padding: 20px;
+    color: var(--para);
+    border-radius: 5px;
+    box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
+    z-index: 2222;
+    border: 2px solid var(--skyblue);
+}
+
+/* Styling for the close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.close:hover {
+    color: red;
+}
+
+.partner-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.partner-form .main-combo-box {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.partner-form .combo-inputs {
+    background-color: #6B7280;
+    height: 40px;
+    width: 20vw;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    color: var(--para);
+    border: none;
+    border-radius: 7px;
+}
+
+.partner-form textarea {
+    height:30%;
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    color: var(--footer-color);
+    border: none;
+    border-radius: 7px;
+}
+
+.partner-form form span {
+    color: var(--hotish);
+}
+
+
+
+
+/* =============================== */
+/* Sign up modal3 CSS Start */
+/* =============================== */
+
+
+/* =============================== */
+/* Sign up Button CSS Start */
+/* =============================== */
+
+/* CSS */
+.button-79 {
+    backface-visibility: hidden;
+    background: var(--skyblue);
+    border: 0;
+    border-radius: .375rem;
+    box-sizing: border-box;
+    color: var(--para);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: -.01em;
+    line-height: 1;
+    padding: 1rem 1.25rem;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transform: translateZ(0) scale(1);
+    transition: transform .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-79:disabled {
+    color: #787878;
+    cursor: auto;
+}
+
+.button-79:not(:disabled):hover {
+    transform: scale(1.05);
+}
+
+.button-79:not(:disabled):hover:active {
+    transform: scale(1.05) translateY(.125rem);
+}
+
+.button-79:focus {
+    outline: 0 solid transparent;
+}
+
+.button-79:focus:before {
+    border-width: .125rem;
+    content: "";
+    left: calc(-1*.375rem);
+    pointer-events: none;
+    position: absolute;
+    top: calc(-1*.375rem);
+    transition: border-radius;
+    user-select: none;
+}
+
+.button-79:focus:not(:focus-visible) {
+    outline: 0 solid transparent;
+}
+
+.button-79:not(:disabled):active {
+    transform: translateY(.125rem);
+}
+
+@media(max-width: 980px) {
+    .modal3 {
+        height: 62vh;
+        width: 90vw;
+        border: 3px solid var(--skyblue);
+    }
+
+    .partner-form .primary-input {
+        height: 40px;
+        width: 67vw;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 10px;
+        color: var(--footer-color);
+        border: none;
+        border-radius: 7px;
+    }
+}
+
+
+/* =============================== */
+/* Sign up Button CSS End */
+/* =============================== */
+
+/* Partner section css ends */
