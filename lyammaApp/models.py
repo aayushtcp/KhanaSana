@@ -13,7 +13,7 @@ class PartnerRequest(models.Model):
     timeStamp = models.DateTimeField(auto_now_add=True, blank=True)
 
     def __str__(self):
-        return "Request from " + self.restaurantname + "owner" + "--" + self.fullname
+        return "Request from " + self.restaurantname + " owner" + "--" + self.fullname
     
     
 class AllItems(models.Model):
@@ -26,4 +26,4 @@ class AllItems(models.Model):
     slug = models.CharField(max_length=130, default="this-s") # url management
     
     def __str__(self):
-        return "Item " + self.itemname + "Category" + "--" + self.category
+        return "Item " + self.itemname + " Category" + "--" + self.category

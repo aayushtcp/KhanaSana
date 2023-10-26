@@ -93,16 +93,13 @@ def partnerrequest(request):
     return redirect("/")
 
 def restaurantlist(request):
-    allItems = AllItems.objects.all()
+    Partners = PartnerRequest.objects.all()
     # print(allItems)
-    context = {"allItems": allItems}
+    context = {"Partners": Partners}
     return render(request, 'restaurantlist.html', context)
 
-def restaurantProfile(request):
+def restaurantProfile(request,slug):
     return render(request, 'restaurantProfile.html')
-
-
-# def restaurantProfile(request,slug):
-#     post = PartnerRequest.objects.filter(slug=slug).first()
-#     context = {"post": post}
-#     return render(request, "restaurantProfile.html", context)
+    # item = AllItems.objects.filter(slug=slug).first()
+    # context = {"item": item}
+    # return render(request, "restaurantProfile.html", context)

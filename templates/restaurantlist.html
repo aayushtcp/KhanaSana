@@ -33,9 +33,9 @@
     {% block content %}
     <h2>Links</h2>
 
-    {% for items in allItems %}
+    {% for partner in Partners %}
     <ul>
-        <li><a href="">{{items.itemname}}</a></li>
+        <li><a href="">{{partner.restaurantname}}</a></li>
     </ul>
     {% endfor %}
     {% endblock %}
