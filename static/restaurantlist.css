@@ -14,7 +14,8 @@
     --skyblue: #525FE1;
     --suntala: rgb(152, 79, 0);
 }
-.personListContainer {
+
+.restaurantlist {
     color: var(--para);
     padding: 4rem;
     display: flex;
@@ -22,21 +23,10 @@
     gap: 1rem;
 }
 
-.personListButton {
-    border: none;
-    padding: .5rem 2rem;
-    border-radius: .5rem;
-    background: red;
-    color: white;
-    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: .7rem;
-}
 
 /* LEFT DIV */
 
-.personListContainer .div1 {
+.restaurantlist .div1 {
     display: flex;
     /* overflow-y: scroll; */
     justify-content: space-between;
@@ -51,7 +41,8 @@
 }
 
 
-.personListContainer .div1 .listBox .box {
+.restaurantlist .div1 .listBox .box {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -120px 36px -18px inset;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -61,7 +52,12 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    filter: brightness(60%);
+    filter: brightness(80%);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.restaurantlist .div1 .listBox .box:hover{
+    transform: scale(1.05);
 }
 
 .listBox .box {
@@ -79,7 +75,7 @@
 
 
 /* RIGHT DIV */
-.personListContainer .div2 {
+.restaurantlist .div2 {
     padding: 0 .5rem;
     justify-content: space-between;
     display: flex;
@@ -88,7 +84,7 @@
     background: red;
 }
 
-.personListContainer .div2 .titleBox {
+.restaurantlist .div2 .titleBox {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -103,11 +99,11 @@
 
 /* For Phone */
 @media(max-width:768px) {
-    .personListContainer {
+    .restaurantlist {
         padding: .5rem;
     }
 
-    .personListContainer .div1 .listBox {
+    .restaurantlist .div1 .listBox {
         width: 100%;
     }
 
@@ -115,14 +111,62 @@
         min-height: 30vh;
     }
 
-    .personListContainer .div1 .listBox {
+    .restaurantlist .div1 .listBox {
         grid-template-columns: 1fr;
         min-height: 100vh;
     }
 
-    .personListContainer .div1 {
+    .restaurantlist .div1 {
         display: flex;
         /* display flex garnu parxqa person list nikalna  */
     }
 
+}
+
+/* banner button starts */
+.banner-button {
+    margin: 10px 0;
+    background-color: var(--bcolor);
+    color: var(--para);
+    width: 8.5em;
+    height: 2.9em;
+    border: #3654ff 0.2em solid;
+    border-radius: 11px;
+    text-align: right;
+    transition: all 0.6s ease;
+}
+
+.banner-button:hover {
+    background-color:  #3654ff;
+    border: var(--mainheading) 0.2em solid;
+    cursor: pointer;
+    color: var(--para);
+}
+
+.banner-button svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+}
+
+.banner-button:hover svg {
+    transform: translateX(5px);
+}
+
+.banner-button .text {
+    font-weight: bold;
+    margin: 0 1.5em
+}
+
+.banner-button .text a{
+    text-decoration: none;
+    color: var(--para);
+    font-size: large;
+}
+.box p{
+    color: #fff;
+    font-weight: bold;
+    /* filter: brightness(200%); */
 }

@@ -52,15 +52,26 @@
             <li><a href="/restaurantlist/{{partnerapproved.slug}}">{{partnerapproved.restaurantname}}</a></li>
         </ul>
     </div> -->
-    <div class="personListContainer">
+    <div class="restaurantlist">
         <div class="div1">
             <div class="listBox" data-aos="fade-up">
                 {% for partnerapproved in approvedPartners %}
                 <div class="box" style="background-image: url(/media/{{partnerapproved.image}});">
                     <h1>{{partnerapproved.restaurantname}}</h1>
                     <p>Lorem ipsum dolor sit amet.</p>
-                    <button class="personListButton">
+                    <!-- <button class="restaurantListButton">
                         <a href="/">View</a>
+                    </button> -->
+                    <button class="banner-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                            </path>
+                        </svg>
+            
+                        <div class="text">
+                            <a href="/restaurantlist/{{partnerapproved.slug}}">Order</a>
+                        </div>
                     </button>
                 </div>
                 {% endfor %}
