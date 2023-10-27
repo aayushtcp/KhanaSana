@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block base_style%}
     {{ block.super }}
-    <style>
+    <link rel="stylesheet" href="{% static 'restaurantlist.css' %}">
+    <!-- <style>
         :root {
             --bcolor: #00101F;
             --footer-color: #010a12;
@@ -36,7 +37,7 @@
             font-size: 30px;
             padding: 10px;
         }
-    </style>
+    </style> -->
     {% endblock base_style%}
     <title>Restaurant | Profile</title>
 </head>
@@ -45,13 +46,27 @@
     {% block content %}
     <h2>Links</h2>
 
-    {% for partnerapproved in approvedPartners %}
-    <div class="partnerharu">
+    
+    <!-- <div class="partnerharu">
         <ul>
             <li><a href="/restaurantlist/{{partnerapproved.slug}}">{{partnerapproved.restaurantname}}</a></li>
         </ul>
+    </div> -->
+    <div class="personListContainer">
+        <div class="div1">
+            <div class="listBox" data-aos="fade-up">
+                {% for partnerapproved in approvedPartners %}
+                <div class="box" style="background-image: url(/media/{{partnerapproved.image}});">
+                    <h1>{{partnerapproved.restaurantname}}</h1>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <button class="personListButton">
+                        <a href="/">View</a>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
-    {% endfor %}
     {% endblock %}
 
 </body>

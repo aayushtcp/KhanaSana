@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --bcolor: #00101F;
+    --footer-color: #010a12;
+    --mainheading: #F4CE14;
+    --para: #fff6f4;
+    --hotish: #FF3FA4;
+    --skyblue: #525FE1;
+    --suntala: rgb(152, 79, 0);
+}
+.personListContainer {
+    color: var(--para);
+    padding: 4rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.personListButton {
+    border: none;
+    padding: .5rem 2rem;
+    border-radius: .5rem;
+    background: red;
+    color: white;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: .7rem;
+}
+
+/* LEFT DIV */
+
+.personListContainer .div1 {
+    display: flex;
+    /* overflow-y: scroll; */
+    justify-content: space-between;
+    width: 100%;
+}
+
+.listBox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+
+.personListContainer .div1 .listBox .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    border-radius: .5rem;
+    /*muniko*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: brightness(60%);
+}
+
+.listBox .box {
+    min-height: 40vh;
+}
+
+.titleBox .box {
+    min-height: 20vh;
+    color: black;
+}
+
+.titleBox {
+    color: black;
+}
+
+
+/* RIGHT DIV */
+.personListContainer .div2 {
+    padding: 0 .5rem;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    background: red;
+}
+
+.personListContainer .div2 .titleBox {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: inherit;
+}
+
+.titleBox .box {
+    background-color: rgb(91, 107, 107);
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+/* For Phone */
+@media(max-width:768px) {
+    .personListContainer {
+        padding: .5rem;
+    }
+
+    .personListContainer .div1 .listBox {
+        width: 100%;
+    }
+
+    .listBox .box {
+        min-height: 30vh;
+    }
+
+    .personListContainer .div1 .listBox {
+        grid-template-columns: 1fr;
+        min-height: 100vh;
+    }
+
+    .personListContainer .div1 {
+        display: flex;
+        /* display flex garnu parxqa person list nikalna  */
+    }
+
+}
