@@ -23,6 +23,6 @@ urlpatterns = [
     path("logout/", views.handleLogout, name="logout"),
     path("restaurantlist/", views.restaurantlist, name="restaurantlist"),
     path("partnerrequest/", views.partnerrequest, name="partnerrequest"),
-    path("restaurantProfile/", views.restaurantProfile, name="restaurantProfile"),
-    # path("<str:slug>/", views.restaurantProfile, name="restaurantProfile"),
+    # path("restaurantProfile/", views.restaurantProfile, name="restaurantProfile"),
+    path("restaurantlist/<str:slug>/", views.restaurantProfile, name="restaurantProfile"),
 ]

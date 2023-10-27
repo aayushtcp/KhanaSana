@@ -3,7 +3,7 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import PartnerRequest, AllItems
+from .models import PartnerRequest,launchPartner, AllItems
 # Create your views here.
 
 # For index Page / Landing Page / Home Page
@@ -93,13 +93,13 @@ def partnerrequest(request):
     return redirect("/")
 
 def restaurantlist(request):
-    Partners = PartnerRequest.objects.all()
+    approvedPartners = launchPartner.objects.all()
     # print(allItems)
-    context = {"Partners": Partners}
+    context = {"approvedPartners": approvedPartners}
     return render(request, 'restaurantlist.html', context)
 
 def restaurantProfile(request,slug):
-    return render(request, 'restaurantProfile.html')
-    # item = AllItems.objects.filter(slug=slug).first()
-    # context = {"item": item}
-    # return render(request, "restaurantProfile.html", context)
+    # return render(request, 'restaurantProfile.html')
+    partnersappro = launchPartner.objects.filter(slug=slug).first()
+    context = {"partnersappro": partnersappro}
+    return render(request, "restaurantProfile.html", context)

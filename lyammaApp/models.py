@@ -26,4 +26,20 @@ class AllItems(models.Model):
     slug = models.CharField(max_length=130, default="this-s") # url management
     
     def __str__(self):
-        return "Item " + self.itemname + " Category" + "--" + self.category
+        return "Item " + self.itemname + " Category" + " -- " + self.category
+    
+    
+class launchPartner(models.Model):
+    sno = models.AutoField(primary_key=True)
+    image = models.ImageField(upload_to="lyammaApp/images", default="upload-image")
+    fullname = models.CharField(max_length=40)
+    address = models.CharField(max_length=30)
+    restaurantname = models.CharField(max_length=50)
+    phone = models.CharField(max_length=14)
+    email = models.CharField(max_length=70)
+    restauranttype = models.CharField(max_length=70)
+    slug = models.CharField(max_length=130, default="normal-slug")  # url management
+    timeStamp = models.DateTimeField(auto_now_add=True, blank=True)
+
+    def __str__(self):
+        return "Approved " + self.restaurantname + " owner " + "--" + self.fullname
