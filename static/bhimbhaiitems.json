@@ -3,48 +3,56 @@
         "id": 1,
         "itemname": "Momo",
         "price": "100.00",
-        "itemcode": "g200"
+        "itemcode": "g200",
+        "image": "../../static/check.jpg"
     },
     {
         "id": 2,
         "itemname": "Pizza",
         "price": "450.00",
-        "itemcode": "p200"
+        "itemcode": "p200",
+        "image": "../../static/check.jpg"
     },
     {
         "id": 3,
         "itemname": "Burger",
         "price": "150.00",
-        "itemcode": "p201"
+        "itemcode": "p201",
+        "image": "../../static/check.jpg"
     },
     {
         "id": 4,
         "itemname": "Chowmein",
         "price": "140.00",
-        "itemcode": "g201"
+        "itemcode": "g201",
+        "image": "../../static/check.jpg"
     },
     {
         "id": 5,
         "itemname": "Chatpate",
         "price": "140.00",
-        "itemcode": "g201"
+        "itemcode": "g201",
+        "image": "../../static/check.jpg"
     },
     {
         "id": 6,
         "itemname": "Coffee",
         "price": "140.00",
-        "itemcode": "g201"
+        "itemcode": "g201",
+        "image": "../../static/check.jpg"
     },
     {
         "id": 7,
         "itemname": "Tea",
         "price": "140.00",
-        "itemcode": "g201"
+        "itemcode": "g201",
+        "image": "../../static/check.jpg"
     },
     {
         "id": 8,
         "itemname": "Pakauda",
         "price": "60.00",
-        "itemcode": "l200"
+        "itemcode": "l200",
+        "image": "../../static/check.jpg"
     }
 ]

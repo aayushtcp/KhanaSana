@@ -37,7 +37,6 @@
             </div>
         </div>
     </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aspernatur, quos eligendi ducimus qui quae iste voluptatum ipsam. Inventore dolorum, labore odit dignissimos magni sint explicabo odio, incidunt qui mollitia officia dicta reprehenderit dolorem quas, quos nulla provident excepturi id accusantium tempora ex quis. Quisquam sint praesentium doloribus molestias aut consequatur natus! Laboriosam quos cumque temporibus necessitatibus asperiores reprehenderit quas autem at rem, doloremque distinctio placeat laudantium. Fugit aut quas et, corrupti non facilis. Officiis vitae esse eligendi illum possimus beatae, at laborum, ipsum cupiditate voluptates quas quod sint assumenda itaque repudiandae dolore nesciunt non aliquam sed? Laborum sequi dolorum harum eligendi earum, qui enim laudantium ducimus recusandae nulla repellendus inventore atque voluptatem rem ad aspernatur ipsum numquam delectus facilis hic. Soluta minima, molestias unde voluptatum, vel cupiditate voluptate itaque, debitis veniam fugiat quidem quasi! Minima provident et dignissimos cumque dolorum, vitae quibusdam officiis sit ipsam aut. Quasi fugit exercitationem ullam, eius accusantium illo nihil qui molestiae a animi voluptatum quae alias? Possimus et enim aut iste, provident vitae ipsum fugiat nostrum, placeat nesciunt pariatur facere? Perferendis dolorem quis impedit quidem rem. Ipsam sit distinctio minus repellendus corporis rerum architecto? Tempora excepturi dolores harum. Suscipit, quasi eaque iste cumque delectus impedit laboriosam incidunt dolor rem quidem voluptatum natus dolore, provident libero iure minus magnam voluptate alias. Molestias illo iste repellat laboriosam? Eum similique dignissimos exercitationem placeat consequuntur, quidem deleniti id aliquam! Iste qui maiores modi aliquid provident, inventore animi reprehenderit fugiat enim aut distinctio voluptates! Accusantium sint nobis eaque fugiat deleniti inventore alias dolor consectetur quisquam dolore iure nulla, beatae explicabo cupiditate temporibus veritatis. Repellendus doloribus adipisci asperiores aperiam cupiditate, iusto facere perspiciatis iure exercitationem earum recusandae, corrupti nostrum dolores cumque quisquam itaque eum, numquam optio. Quod in sed quis, explicabo quos beatae aspernatur aperiam cum, error est facilis at odio omnis tempora consectetur doloremque repellat natus voluptates accusamus ea impedit. Quae laboriosam, reprehenderit commodi dolorem sapiente iste, dolorum repellat dignissimos voluptatibus eum deleniti expedita sint hic. Tempora corporis maxime mollitia labore nam id iusto. Iusto corrupti, aperiam reprehenderit, expedita laboriosam tenetur sed, quisquam ipsa consequuntur possimus vitae rem doloremque? Tempora voluptates unde nisi tempore rem aperiam perferendis temporibus harum earum commodi odit neque natus, amet in, doloribus assumenda dignissimos! Omnis ad dolor blanditiis cumque quae vero? Sit debitis expedita rem odit dolores fuga, quo voluptatibus possimus animi, quam id autem dicta. Dignissimos perferendis labore suscipit odio illo excepturi quo.</p>
     <script>
         // fetch("bhimbhaiitems.json")
         fetch("{% static 'bhimbhaiitems.json'%}")
@@ -48,17 +47,14 @@
                 let placeholder = document.querySelector("#data-output"); let out = "";
 
                 for (let item of bhimbhaiitems) {
-                    // out += `
-                    //     ${item.price}
-                    // `;
                     out += `
                         <div class="count-container">
                             
                             <div class="count-card">
                                 <div class="count-card-left">
                                     <h3>${item.id}</h3>
-                                    <img src="{% static 'check.jpg'%}" alt="khana">
-                                    <h3>Chicken Mo:Mo</h3>
+                                    <img alt="Khana" src='${item.image}'>
+                                    <h3>${item.itemname}</h3>
                                 </div>
                                 <div class="count-card-right">
                                     <i class="fa-solid fa-minus"></i>
@@ -73,6 +69,7 @@
                 }
                 placeholder.innerHTML = out;
             });
+            // <img src="{% static 'check.jpg'%}" alt="khana">
     </script>
     {% endblock %}
 </body>
