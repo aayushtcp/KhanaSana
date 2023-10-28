@@ -9,50 +9,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block base_style%}
     {{ block.super }}
-    <link rel="stylesheet" href="{% static 'restaurantProfile.css' %}">
+    <link rel="stylesheet" href="{% static 'fun.css' %}">
     {% endblock base_style%}
     <title>Restaurant | Profile</title>
 </head>
 
 <body>
     {% block content %}
-    <div class="grid-container">
-        <div class="main" style="background-image: url(/static/check.jpg);">
-            <!-- <img src="{% static 'check.jpg' %}" alt=""> -->
-        </div>
-        <!-- <h2 id="our-menu"></h2> -->
-        <div class="items" id="data-output">
-            <!-- Count card starts -->
-            <!-- <div class="count-container">
-                <h2>Our Menu</h2>
-                <div class="count-card">
-                    <div class="count-card-left">
-                        <h3>1.</h3>
-                        <img src="{% static 'check.jpg'%}" alt="khana">
-                        <h3>Chicken Mo:Mo</h3>
-                    </div>
-                    <div class="count-card-right">
-                        <i class="fa-solid fa-minus"></i>
-                        <div class="live-count">
-                            <h3 id="data-output"></h3>
-                        </div>
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                </div>
-            </div> -->
+    <div class="main" style="background-image: url(/static/check.jpg);"></div>
+    <div class="our-items">
+        <h2 class="head1">Our Items</h2>
+        <h2></h2>
+    </div>
+    <div class="itemsandcart">
+        <div class="itemharu" id="data-output">
+            <!-- count card starts -->
             <!-- Count card ends -->
-
         </div>
         <div class="cart">
-            <div class="sticky-cart">
-                <h2>Order Summary</h2>
-                <ul>
-                    <li>momo</li>
-                    <li>momo</li>
-                    <li>momo</li>
-                    <li>momo</li>
-                </ul>
-            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque molestias deleniti et cumque id numquam
+                dignissimos aspernatur similique animi eveniet atque omnis sed molestiae temporibus veritatis ratione
+                magni quos, laborum quo quidem est in porro unde beatae! Aspernatur nemo quia hic enim rerum a totam
+                reiciendis expedita, officiis doloribus asperiores possimus minima facilis, ex numquam tempora corrupti
+                praesentium. Est eligendi distinctio enim nisi voluptatibus quam, non ullam velit necessitatibus
+                nesciunt nihil. Nostrum, dolorem iusto velit pariatur fugit a unde nemo ex sequi qui, voluptates quidem
+                quis. Delectus aliquid, adipisci aperiam porro architecto itaque placeat repellendus molestiae sequi
+                minima, culpa eum ipsa quibusdam hic. Quibusdam at laboriosam nisi inventore. Eaque delectus quibusdam
+                soluta quos tenetur natus consectetur harum nihil ad necessitatibus fuga aspernatur corporis, officiis
+                qui veniam non id ea error. Nesciunt placeat libero repellat et quidem ut itaque officiis eaque,
+                pariatur necessitatibus molestias laudantium maxime excepturi dolor consectetur sapiente rerum suscipit
+                dolore mollitia deleniti quod cupiditate architecto! Illum facilis ratione quas nobis ducimus. Optio
+                voluptatibus rerum beatae culpa ad nihil unde nesciunt, sit quas nisi sunt corporis officiis aut earum
+                omnis reprehenderit vel officia sapiente eaque similique delectus nulla dolorem. Atque quae ullam
+                doloribus distinctio laudantium exercitationem quia itaque. Perferendis.</p>
         </div>
     </div>
     <script>
@@ -70,7 +59,7 @@
                     // `;
                     out += `
                         <div class="count-container">
-                            <h2>Our Menu</h2>
+                            
                             <div class="count-card">
                                 <div class="count-card-left">
                                     <h3>${item.id}</h3>
@@ -91,14 +80,7 @@
                 placeholder.innerHTML = out;
             });
     </script>
-
-    <!-- <script src="{%static 'restaurantProfile.js' %}"></script> -->
     {% endblock %}
 </body>
-<!-- <tr>
-    <td> <img src='${item.image}'> </td>
-    <td>${item.itemname}</td>
-    <td>${item.price}</td>
-</tr> -->
 
 </html>

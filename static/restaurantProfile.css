@@ -15,70 +15,116 @@
     --suntala: rgb(152, 79, 0);
 }
 
-.grid-container {
-    display: grid;
-    height: 100vh;
-    grid-template-columns: 1fr 0.5fr;
-    grid-template-rows: 1fr 0.9fr;
-    grid-template-areas: "main main"
-        "items cart"
-    ;
-    gap: 10px;
+/* =============================== */
+/* Card CSS Starts */
+/* =============================== */
+
+.cards {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+    margin-bottom: 4rem;
 }
 
+.maincard {
+    background: url("/static/check.jpg")no-repeat;
+    box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
+    height: 10vh;
+    width: 30vw;
+    padding: 10vw;
+    background-position: center center;
+    background-size: cover;
+    filter: brightness(85%);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.card-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-contents h2 {
+    text-align: center;
+    color: var(--hotish);
+    font-size: x-large;
+}
+
+.card-btn {
+    align-self: center;
+}
+
+/* =============================== */
+/* Card CSS End */
+/* =============================== */
+/* for small screem */
+@media(max-width: 980px) {
+    .cards {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .maincard {
+        background: url("/static/check.jpg")no-repeat;
+        box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
+        height: 20vh;
+        width: 40vw;
+        padding: 10vw;
+        background-position: center center;
+        background-size: cover;
+        filter: brightness(85%);
+        cursor: pointer;
+        border-radius: 10px;
+    }
+}
+
+/* now write css */
+
 .main{
-    grid-area: main;
+    min-height: 40vh;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     filter: brightness(60%);
+    margin-bottom: 1rem;
 }
-.items {
-    height: max-content;
+.itemsandcart{
+    display: flex;
+    gap:15px;
+}
+
+.itemharu{
+    flex-basis: 60%;
+    /* background-color: yellow; */
+}
+.cart{
+    flex-basis: 40%;
+    background-color: var(--hotish);
+}
+.our-items{
+    margin-left: 24em;
+    margin-bottom: 1rem;
     color: var(--para);
-    grid-area: items;
 }
-
-.cart {
-    /* background-color: #525FE1; */
-    height: max-content;
-    grid-area: cart;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-}
-.sticky-cart{
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    height: 70%;
-    width: 80%;
-    background-color: #FF3FA4;
-}
-
-@media only screen and (max-width:640px) {
-    .grid-container {
-        display: grid;
-        height: 100vh;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.7fr 0.9fr;
-        grid-template-areas: "main"
-            "items"
-        ;
-        gap: 10px;
+/* for small screen  */
+@media(max-width: 980px) {
+    .our-items{
+        margin: 0;
+        text-align: center;
     }
-
-    .cart {
+    .itemsandcart{
+        flex-direction: column;
+    }
+    .cart{
         display: none;
     }
 }
-
 /* =============================== */
 /* Count card CSS Start */
 /* =============================== */
@@ -89,6 +135,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    color: var(--para);
 }
 
 .count-card {
@@ -102,6 +149,7 @@
     border-radius: 5px;
     box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
     margin: auto;
+    margin-bottom: 1rem;
     background-color: var(--footer-color);
 }
 
@@ -150,7 +198,3 @@
 /* =============================== */
 /* Count card CSS End */
 /* =============================== */
-
-#our-menu{
-    color: var(--para);
-}

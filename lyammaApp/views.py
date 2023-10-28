@@ -102,4 +102,4 @@ def restaurantProfile(request,slug):
     # return render(request, 'restaurantProfile.html')
     partnersappro = launchPartner.objects.filter(slug=slug).first()
     context = {"partnersappro": partnersappro}
-    return render(request, "fun.html", context)
+    return render(request, "restaurantProfile.html", context)
