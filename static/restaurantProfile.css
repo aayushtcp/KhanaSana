@@ -86,7 +86,7 @@
 
 /* now write css */
 
-.main{
+.main {
     min-height: 40vh;
     background-repeat: no-repeat;
     background-position: center center;
@@ -94,37 +94,64 @@
     filter: brightness(60%);
     margin-bottom: 1rem;
 }
-.itemsandcart{
+
+.itemsandcart {
     display: flex;
-    gap:15px;
+    gap: 15px;
 }
 
-.itemharu{
-    flex-basis: 60%;
+.itemharu {
+    flex-basis: 99%;
     /* background-color: yellow; */
 }
-.cart{
+
+.cart {
     flex-basis: 40%;
+    color: var(--para);
+    text-align: center;
+    padding-right: 20px;
+    margin-right: 20px;
     background-color: var(--hotish);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.our-items{
+ul li{
+
+    list-style: none;
+}
+.cart-list{
+    position: sticky;
+    top:0 ;
+    background-color: red;
+    padding: 11rem;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.our-items {
     margin-left: 24em;
     margin-bottom: 1rem;
     color: var(--para);
 }
+
 /* for small screen  */
 @media(max-width: 980px) {
-    .our-items{
+    .our-items {
         margin: 0;
         text-align: center;
     }
-    .itemsandcart{
+
+    .itemsandcart {
         flex-direction: column;
     }
-    .cart{
+
+    .cart {
         display: none;
     }
 }
+
 /* =============================== */
 /* Count card CSS Start */
 /* =============================== */
