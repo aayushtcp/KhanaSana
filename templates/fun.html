@@ -1,0 +1,170 @@
+{% extends 'base.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block base_style%}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'fun.css' %}">
+    {% endblock base_style%}
+    <title>Restaurant | Profile</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="main" style="background-image: url(/static/check.jpg);"></div>
+    <div class="our-items">
+        <h2 class="head1">Our Items</h2>
+        <h2></h2>
+    </div>
+    <div class="itemsandcart">
+        <div class="itemharu" id="data-output">
+            <!-- count card starts -->
+            <!-- Count card ends -->
+        </div>
+        <div class="cart">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque molestias deleniti et cumque id numquam
+                dignissimos aspernatur similique animi eveniet atque omnis sed molestiae temporibus veritatis ratione
+                magni quos, laborum quo quidem est in porro unde beatae! Aspernatur nemo quia hic enim rerum a totam
+                reiciendis expedita, officiis doloribus asperiores possimus minima facilis, ex numquam tempora corrupti
+                praesentium. Est eligendi distinctio enim nisi voluptatibus quam, non ullam velit necessitatibus
+                nesciunt nihil. Nostrum, dolorem iusto velit pariatur fugit a unde nemo ex sequi qui, voluptates quidem
+                quis. Delectus aliquid, adipisci aperiam porro architecto itaque placeat repellendus molestiae sequi
+                minima, culpa eum ipsa quibusdam hic. Quibusdam at laboriosam nisi inventore. Eaque delectus quibusdam
+                soluta quos tenetur natus consectetur harum nihil ad necessitatibus fuga aspernatur corporis, officiis
+                qui veniam non id ea error. Nesciunt placeat libero repellat et quidem ut itaque officiis eaque,
+                pariatur necessitatibus molestias laudantium maxime excepturi dolor consectetur sapiente rerum suscipit
+                dolore mollitia deleniti quod cupiditate architecto! Illum facilis ratione quas nobis ducimus. Optio
+                voluptatibus rerum beatae culpa ad nihil unde nesciunt, sit quas nisi sunt corporis officiis aut earum
+                omnis reprehenderit vel officia sapiente eaque similique delectus nulla dolorem. Atque quae ullam
+                doloribus distinctio laudantium exercitationem quia itaque. Perferendis.</p>
+        </div>
+    </div>
+    <!-- Group one Cards for index starts  -->
+    <div class="cards">
+        <!-- Card one starts -->
+        <div class="maincard">
+            <div class="card-contents">
+                <h2>Chicken Pizza</h2>
+                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+                <button class="banner-button card-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                        </path>
+                    </svg>
+                    <div class="text">
+                        Order
+                    </div>
+                </button>
+            </div>
+        </div>
+        <!-- Card one ends -->
+
+        <!-- Card two starts -->
+        <div class="maincard">
+            <div class="card-contents">
+                <h2>Buff Momo</h2>
+                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+                <button class="banner-button card-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                        </path>
+                    </svg>
+                    <div class="text">
+                        Order
+                    </div>
+                </button>
+            </div>
+        </div>
+        <!-- Card two ends -->
+
+        <!-- Card three starts -->
+        <div class="maincard">
+            <div class="card-contents">
+                <h2>Veg Chowmein</h2>
+                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+                <button class="banner-button card-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                        </path>
+                    </svg>
+                    <div class="text">
+                        Order
+                    </div>
+                </button>
+            </div>
+        </div>
+        <!-- Card three ends -->
+
+        <!-- Card four starts -->
+        <div class="maincard">
+            <div class="card-contents">
+                <h2>Buff Chowmein</h2>
+                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+                <button class="banner-button card-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                        </path>
+                    </svg>
+                    <div class="text">
+                        Order
+                    </div>
+                </button>
+            </div>
+        </div>
+        <!-- Card four ends -->
+    </div>
+
+    <!-- Group one Cards for index ends  -->
+    <script>
+        // fetch("bhimbhaiitems.json")
+        fetch("{% static 'bhimbhaiitems.json'%}")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (bhimbhaiitems) {
+                let placeholder = document.querySelector("#data-output"); let out = "";
+
+                for (let item of bhimbhaiitems) {
+                    // out += `
+                    //     ${item.price}
+                    // `;
+                    out += `
+                        <div class="count-container">
+                            
+                            <div class="count-card">
+                                <div class="count-card-left">
+                                    <h3>${item.id}</h3>
+                                    <img src="{% static 'check.jpg'%}" alt="khana">
+                                    <h3>Chicken Mo:Mo</h3>
+                                </div>
+                                <div class="count-card-right">
+                                    <i class="fa-solid fa-minus"></i>
+                                    <div class="live-count">
+                                        <h3>${item.price}</h3>
+                                    </div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                placeholder.innerHTML = out;
+            });
+    </script>
+    {% endblock %}
+</body>
+
+</html>

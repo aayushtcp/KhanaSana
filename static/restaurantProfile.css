@@ -19,29 +19,29 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 0.5fr;
-    grid-template-rows: 0.7fr 0.9fr;
+    grid-template-rows: 1fr 0.9fr;
     grid-template-areas: "main main"
         "items cart"
     ;
     gap: 10px;
 }
 
-.main {
-    grid-area: main;
-}
 .main{
+    grid-area: main;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     filter: brightness(60%);
 }
 .items {
+    height: max-content;
     color: var(--para);
     grid-area: items;
 }
 
 .cart {
     /* background-color: #525FE1; */
+    height: max-content;
     grid-area: cart;
     display: flex;
     flex-direction: column;
@@ -51,6 +51,7 @@
     top: 0;
 }
 .sticky-cart{
+    height: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -149,3 +150,7 @@
 /* =============================== */
 /* Count card CSS End */
 /* =============================== */
+
+#our-menu{
+    color: var(--para);
+}

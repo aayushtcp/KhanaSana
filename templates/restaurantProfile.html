@@ -20,9 +20,10 @@
         <div class="main" style="background-image: url(/static/check.jpg);">
             <!-- <img src="{% static 'check.jpg' %}" alt=""> -->
         </div>
-        <div class="items">
+        <!-- <h2 id="our-menu"></h2> -->
+        <div class="items" id="data-output">
             <!-- Count card starts -->
-            <div class="count-container">
+            <!-- <div class="count-container">
                 <h2>Our Menu</h2>
                 <div class="count-card">
                     <div class="count-card-left">
@@ -33,54 +34,12 @@
                     <div class="count-card-right">
                         <i class="fa-solid fa-minus"></i>
                         <div class="live-count">
-                            <h3>123</h3>
+                            <h3 id="data-output"></h3>
                         </div>
                         <i class="fa-solid fa-plus"></i>
                     </div>
                 </div>
-                <div class="count-card">
-                    <div class="count-card-left">
-                        <h3>2.</h3>
-                        <img src="{% static 'check.jpg'%}" alt="khana">
-                        <h3>Chicken Mo:Mo</h3>
-                    </div>
-                    <div class="count-card-right">
-                        <i class="fa-solid fa-minus"></i>
-                        <div class="live-count">
-                            <h3>123</h3>
-                        </div>
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                </div>
-                <div class="count-card">
-                    <div class="count-card-left">
-                        <h3>3.</h3>
-                        <img src="{% static 'check.jpg'%}" alt="khana">
-                        <h3>Chicken Mo:Mo</h3>
-                    </div>
-                    <div class="count-card-right">
-                        <i class="fa-solid fa-minus"></i>
-                        <div class="live-count">
-                            <h3>123</h3>
-                        </div>
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                </div>
-                <div class="count-card">
-                    <div class="count-card-left">
-                        <h3>4.</h3>
-                        <img src="{% static 'check.jpg'%}" alt="khana">
-                        <h3>Chicken Mo:Mo</h3>
-                    </div>
-                    <div class="count-card-right">
-                        <i class="fa-solid fa-minus"></i>
-                        <div class="live-count">
-                            <h3>123</h3>
-                        </div>
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                </div>
-            </div>
+            </div> -->
             <!-- Count card ends -->
 
         </div>
@@ -96,7 +55,50 @@
             </div>
         </div>
     </div>
+    <script>
+        // fetch("bhimbhaiitems.json")
+        fetch("{% static 'bhimbhaiitems.json'%}")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (bhimbhaiitems) {
+                let placeholder = document.querySelector("#data-output"); let out = "";
+
+                for (let item of bhimbhaiitems) {
+                    // out += `
+                    //     ${item.price}
+                    // `;
+                    out += `
+                        <div class="count-container">
+                            <h2>Our Menu</h2>
+                            <div class="count-card">
+                                <div class="count-card-left">
+                                    <h3>${item.id}</h3>
+                                    <img src="{% static 'check.jpg'%}" alt="khana">
+                                    <h3>Chicken Mo:Mo</h3>
+                                </div>
+                                <div class="count-card-right">
+                                    <i class="fa-solid fa-minus"></i>
+                                    <div class="live-count">
+                                        <h3>${item.price}</h3>
+                                    </div>
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                placeholder.innerHTML = out;
+            });
+    </script>
+
+    <!-- <script src="{%static 'restaurantProfile.js' %}"></script> -->
     {% endblock %}
 </body>
+<!-- <tr>
+    <td> <img src='${item.image}'> </td>
+    <td>${item.itemname}</td>
+    <td>${item.price}</td>
+</tr> -->
 
 </html>
