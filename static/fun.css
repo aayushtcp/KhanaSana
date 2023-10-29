@@ -230,7 +230,7 @@ ul li{
 /* Count card CSS End */
 /* =============================== */
 ol{
-    background-color: var(--hotish);
+    /* background-color: var(--hotish); */
     border-radius: 10px;
 }
 ol li{
