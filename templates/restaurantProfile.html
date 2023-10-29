@@ -39,6 +39,7 @@
     </div>
     <script>
         // fetch("bhimbhaiitems.json")
+        // fetch("{% static '{{post.jfile}}.json'%}")
         fetch("{% static 'bhimbhaiitems.json'%}")
             .then(function (response) {
                 return response.json();

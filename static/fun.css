@@ -86,7 +86,7 @@
 
 /* now write css */
 
-.main{
+.main {
     min-height: 40vh;
     background-repeat: no-repeat;
     background-position: center center;
@@ -94,37 +94,68 @@
     filter: brightness(60%);
     margin-bottom: 1rem;
 }
-.itemsandcart{
+
+.itemsandcart {
     display: flex;
-    gap:15px;
+    gap: 15px;
 }
 
-.itemharu{
-    flex-basis: 60%;
+.itemharu {
+    flex-basis: 99%;
     /* background-color: yellow; */
 }
-.cart{
+
+.cart {
     flex-basis: 40%;
-    background-color: var(--hotish);
+    color: var(--para);
+    text-align: center;
+    padding-right: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.our-items{
-    margin-left: 24em;
+ul li{
+
+    list-style: none;
+}
+.cart-list{
+    position: sticky;
+    top:0 ;
+    background-color: var(--footer-color);
+    padding: 8rem;
+    margin: 20px;
+    border-radius: 10px;
+    min-height: 60vh;
+    min-width: 30vw;
+}
+.fa-trash{
+    padding: 2px;
+    margin-left: 20px;
+}
+.our-items {
+    margin-left: 27rem;
     margin-bottom: 1rem;
     color: var(--para);
 }
+
 /* for small screen  */
 @media(max-width: 980px) {
-    .our-items{
+    .our-items {
         margin: 0;
         text-align: center;
     }
-    .itemsandcart{
+
+    .itemsandcart {
         flex-direction: column;
     }
-    .cart{
+
+    .cart {
         display: none;
     }
 }
+
 /* =============================== */
 /* Count card CSS Start */
 /* =============================== */
@@ -198,3 +229,35 @@
 /* =============================== */
 /* Count card CSS End */
 /* =============================== */
+ol{
+    background-color: var(--hotish);
+    border-radius: 10px;
+}
+ol li{
+    padding: 10px;
+    text-align: left;
+}
+.fa-trash:hover{
+    color: var(--mainheading);
+    cursor: pointer;
+}
+.cartbtns{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.cartbtns input{
+    background-color: var(--bcolor);
+    border: 2px solid var(--skyblue);
+    color: var(--para);
+    font-weight: bold;
+    padding: 18px;
+    border-radius: 4px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.cartbtns input:hover{
+    background-color: var(--hotish);
+    border: 2px solid var(--mainheading);
+}
