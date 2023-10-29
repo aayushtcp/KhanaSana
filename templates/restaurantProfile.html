@@ -28,12 +28,23 @@
         </div>
         <div class="cart">
             <div class="cart-list">
-                <ul>
-                    <li>MOMO</li>
-                    <li>MOMO</li>
-                    <li>MOMO</li>
-                    <li>MOMO</li>
-                </ul>
+                Total Item: <b id="c"></b>
+
+                <ol id="hello">
+
+                </ol>
+
+                <div class="trr">
+
+
+                </div>
+
+                <br>
+                Net Total: <b id="nettotal">0</b>
+                <div class="cartbtns">
+                    <input class="candcbtns cancel cancelButton" type="submit" value="Remove All" name="cancel" id="">
+                    <input class="candcbtns checkout" type="submit" value="Checkout" name="checkout" id="">
+                </div>
             </div>
         </div>
     </div>
@@ -46,6 +57,9 @@
             })
             .then(function (bhimbhaiitems) {
                 let placeholder = document.querySelector("#data-output"); let out = "";
+
+
+
 
                 for (let item of bhimbhaiitems) {
                     out += `
@@ -60,18 +74,80 @@
                                 <div class="count-card-right">
                                     <i class="fa-solid fa-minus"></i>
                                     <div class="live-count">
-                                        <h3>${item.price}</h3>
-                                    </div>
-                                    <i class="fa-solid fa-plus"></i>
-                                </div>
+                                        <h3>${parseInt(item.price)}</h3>
+
+                                        </div>
+                                        <i class="fa-solid fa-plus" value="Add to Cart" onclick="add('${item.itemname}', '${parseInt(item.price)}')"></i>
+                                        </div>
                             </div>
                         </div>
                     `;
+
                 }
                 placeholder.innerHTML = out;
+
             });
-            // <img src="{% static 'check.jpg'%}" alt="khana">
+        // next script
+
+
+
+
+
+        // Adding script
+
+        var x = 0;
+        document.getElementById("c").innerText = x;
+        // document.getElementById("nettotal").innerText = x;
+
+        function add(val, pri) {
+
+
+            document.getElementById("hello").innerHTML += "<li>" + val + ": " + "Rs. " + pri + "<i class='fa-solid fa-trash' onclick='remove()'></i> </li>";
+            x += 1;
+            let newx = document.getElementById("c").innerText = x;
+
+
+            // net total dom  is here
+            let netTotal = document.querySelector("#nettotal").innerText
+
+            let finalTotal = parseInt(netTotal) + parseInt(pri)
+
+            nettotal.innerText = finalTotal
+
+        }
+
+        // cancel button
+        let cancel = document.querySelector(".cancelButton")
+        cancel.addEventListener("click", () => {
+            let hello = document.querySelector("#hello")
+            hello.innerHTML = ""
+            x = 0;
+            document.getElementById("c").innerText = x;
+
+            // clearing the net Total and passing the value 0
+            nettotal.innerText = parseInt(0)
+
+        })
+
+
+        // Removing Script
+        function remove() {
+            var listItem = document.getElementsByTagName("li");
+            for (var i = 0; i < listItem.length; i++) {
+                listItem[i].onclick = function () {
+                    this.parentNode.removeChild(this);
+                }
+            }
+            x = x - 1;
+            document.getElementById("c").innerText = x;
+        }
+
+
+
+
+        // <img src="{% static 'check.jpg'%}" alt="khana">
     </script>
+
     {% endblock %}
 </body>
 

@@ -116,17 +116,33 @@
     align-items: center;
     justify-content: center;
 }
-ul li{
+
+ul li {
 
     list-style: none;
 }
-.cart-list{
+
+.cart-list {
     position: sticky;
-    top:0 ;
-    background-color: red;
-    padding: 11rem;
+    top: 0;
+    background-color: var(--footer-color);
+    padding: 8rem;
     margin: 20px;
     border-radius: 10px;
+    min-height: 60vh;
+    min-width: 30vw;
+}
+
+
+
+.cart-list li i {
+    float: right;
+}
+
+.fa-trash {
+    padding: 2px;
+    margin-left: 20px;
+
 }
 
 .our-items {
@@ -224,3 +240,40 @@ ul li{
 /* =============================== */
 /* Count card CSS End */
 /* =============================== */
+ol{
+    background-color: var(--hotish);
+    border-radius: 10px;
+}
+
+ol li {
+    padding: 10px;
+    text-align: left;
+}
+
+.fa-trash:hover {
+    color: var(--mainheading);
+    cursor: pointer;
+}
+
+.cartbtns {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cartbtns input {
+    background-color: var(--bcolor);
+    border: 2px solid var(--skyblue);
+    color: var(--para);
+    font-weight: bold;
+    padding: 18px;
+    border-radius: 4px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.cartbtns input:hover {
+    background-color: var(--hotish);
+    border: 2px solid var(--mainheading);
+}
