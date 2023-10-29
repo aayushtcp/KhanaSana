@@ -116,24 +116,35 @@
     align-items: center;
     justify-content: center;
 }
-ul li{
+
+ul li {
 
     list-style: none;
 }
-.cart-list{
+
+.cart-list {
     position: sticky;
-    top:0 ;
+    top: 0;
     background-color: var(--footer-color);
     padding: 8rem;
     margin: 20px;
     border-radius: 10px;
     min-height: 60vh;
-    min-width: 30vw;
+    min-width: 40vw;
 }
-.fa-trash{
+
+
+
+.cart-list li i {
+    float: right;
+}
+
+.fa-trash {
     padding: 2px;
     margin-left: 20px;
+
 }
+
 .our-items {
     margin-left: 27rem;
     margin-bottom: 1rem;
@@ -229,24 +240,28 @@ ul li{
 /* =============================== */
 /* Count card CSS End */
 /* =============================== */
-ol{
+ol {
     background-color: var(--hotish);
     border-radius: 10px;
 }
-ol li{
+
+ol li {
     padding: 10px;
     text-align: left;
 }
-.fa-trash:hover{
+
+.fa-trash:hover {
     color: var(--mainheading);
     cursor: pointer;
 }
-.cartbtns{
+
+.cartbtns {
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
-.cartbtns input{
+
+.cartbtns input {
     background-color: var(--bcolor);
     border: 2px solid var(--skyblue);
     color: var(--para);
@@ -257,7 +272,8 @@ ol li{
     cursor: pointer;
     transition: 0.3s ease;
 }
-.cartbtns input:hover{
+
+.cartbtns input:hover {
     background-color: var(--hotish);
     border: 2px solid var(--mainheading);
 }
