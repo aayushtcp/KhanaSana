@@ -99,7 +99,11 @@ def restaurantlist(request):
     return render(request, 'restaurantlist.html', context)
 
 def restaurantProfile(request,slug):
-    # return render(request, 'restaurantProfile.html')
     partnersappro = launchPartner.objects.filter(slug=slug).first()
     context = {"partnersappro": partnersappro}
-    return render(request, "restaurantProfile.html", context)
+    return render(request, "fun.html", context)
+
+    # approvedPartners = launchPartner.objects.all()
+    # print(approvedPartners)
+    # context = {"approvedPartners": approvedPartners}
+    # return render(request, 'fun.html', context)

@@ -48,6 +48,7 @@
             </div>
         </div>
     </div>
+    
     <script>
         // fetch("bhimbhaiitems.json")
         // fetch("{% static '{{post.jfile}}.json'%}")
@@ -56,11 +57,8 @@
                 return response.json();
             })
             .then(function (bhimbhaiitems) {
-                let placeholder = document.querySelector("#data-output"); let out = "";
-
-
-
-
+                let placeholder = document.querySelector("#data-output");
+                let out = "";
                 for (let item of bhimbhaiitems) {
                     out += `
                         <div class="count-container">

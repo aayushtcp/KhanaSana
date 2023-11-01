@@ -48,19 +48,18 @@
             </div>
         </div>
     </div>
+    <h1 id="joo">{{partnersappro.restaurantname}}</h1>
     <script>
+        let sel = document.querySelector('#joo');
         // fetch("bhimbhaiitems.json")
-        // fetch("{% static '{{post.jfile}}.json'%}")
+        // fetch("{% static '{{giz.restaurantname}}.json'%}")
         fetch("{% static 'bhimbhaiitems.json'%}")
             .then(function (response) {
                 return response.json();
             })
             .then(function (bhimbhaiitems) {
-                let placeholder = document.querySelector("#data-output"); let out = "";
-
-
-
-
+                let placeholder = document.querySelector("#data-output");
+                let out = "";
                 for (let item of bhimbhaiitems) {
                     out += `
                         <div class="count-container">
