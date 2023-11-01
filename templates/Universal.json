@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "itemname": "C-Momo",
+        "price": 150,
+        "itemcode": "g203",
+        "image": "../../static/check.jpg"
+    },
+    {
+        "id": 2,
+        "itemname": "Pizza",
+        "price": 450,
+        "itemcode": "p200",
+        "image": "../../static/check.jpg"
+    },
+    {
+        "id": 3,
+        "itemname": "Burger",
+        "price": 150,
+        "itemcode": "p201",
+        "image": "../../static/check.jpg"
+    },
+    {
+        "id": 4,
+        "itemname": "Chowmein",
+        "price": 140,
+        "itemcode": "g201",
+        "image": "../../static/check.jpg"
+    },
+    {
+        "id": 5,
+        "itemname": "Chatpate",
+        "price": 140,
+        "itemcode": "g201",
+        "image": "../../static/check.jpg"
+    },
+    {
+        "id": 6,
+        "itemname": "Coffee",
+        "price": 140,
+        "itemcode": "g201",
+        "image": "../../static/check.jpg"
+    },
+    {
+        "id": 7,
+        "itemname": "Tea",
+        "price": 140,
+        "itemcode": "g201",
+        "image": "../../static/check.jpg"
+    },
+    {
+        "id": 8,
+        "itemname": "Pakauda",
+        "price": 60,
+        "itemcode": "l200",
+        "image": "../../static/check.jpg"
+    }
+]
