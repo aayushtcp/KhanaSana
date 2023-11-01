@@ -107,3 +107,7 @@ def restaurantProfile(request,slug):
     # print(approvedPartners)
     # context = {"approvedPartners": approvedPartners}
     # return render(request, 'fun.html', context)
+
+
+def about(request):
+    return render(request, 'about.html')

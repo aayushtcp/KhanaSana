@@ -1,0 +1,23 @@
+body{
+    scroll-behavior: smooth;
+}
+
+.container{
+    height: max-content;
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    grid-template-areas: "sidebar main";
+}
+.sidebar{
+    grid-area: sidebar;
+    background-color: red;
+}
+.main{
+    grid-area: main;
+    background-color: yellow;
+}
+.sidebar.sidebar-ul{
+    background-color: green;
+}

@@ -25,4 +25,7 @@ urlpatterns = [
     path("partnerrequest/", views.partnerrequest, name="partnerrequest"),
     # path("restaurantProfile/", views.restaurantProfile, name="restaurantProfile"),
     path("restaurantlist/<str:slug>/", views.restaurantProfile, name="restaurantProfile"),
+    
+    # Just doing
+    path("about/", views.about, name="about"),
 ]

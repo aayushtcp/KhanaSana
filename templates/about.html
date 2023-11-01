@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block base_style%}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+    {% endblock base_style%}
+    <title>Restaurant | Profile</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="container">
+        <div class="sidebar">
+            <ol>
+                <li>Who are we?</li>
+                <li>Our Vision</li>
+                <li>Our Mission</li>
+                <li>Hello</li>
+            </ol>
+        </div>
+        <div class="main">
+            <section class="mainabout">
+                <h2>About Us:</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium eius harum reprehenderit iusto
+                    provident, amet quia laboriosam voluptatem explicabo similique ea incidunt dolores. Ab obcaecati
+                    nostrum sit esse nisi? Reprehenderit eveniet quas sequi quasi totam in saepe amet aliquam ipsam
+                    exercitationem vero cum repudiandae minima, velit rerum excepturi cupiditate veritatis aut? Fuga
+                    tenetur quas laborum necessitatibus consequatur, omnis recusandae aliquam dolorem ab itaque modi!
+                    Voluptatem corrupti at tenetur autem quibusdam aperiam fugit minima corporis! Ipsum, vero
+                    perferendis. Animi quas beatae consectetur, labore rem eveniet officia? Sed quae itaque quis optio
+                    natus magni ab ea eaque, fugiat atque quod sunt voluptates.</p>
+            </section>
+
+            <section class="ourvision">
+                <h2>About Us:</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum qui error aliquid doloribus, omnis
+                    accusamus quas repellendus nihil ad, quos sed a autem enim quod suscipit eligendi, reprehenderit
+                    commodi corporis.
+                </p>
+            </section>
+            <section class="ourmission">
+                <h2>About Us:</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum qui error aliquid doloribus, omnis
+                    accusamus quas repellendus nihil ad, quos sed a autem enim quod suscipit eligendi, reprehenderit
+                    commodi corporis.
+                </p>
+            </section>
+            <section class="map"></section>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
