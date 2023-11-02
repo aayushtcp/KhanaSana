@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -15,10 +16,6 @@
     --suntala: rgb(152, 79, 0);
 }
 
-body {
-    scroll-behavior: smooth;
-}
-
 .container {
     color: var(--para);
     height: max-content;
@@ -26,7 +23,9 @@ body {
     grid-template-columns: .3fr 1fr;
     grid-template-rows: 1fr;
     gap: 10px;
+    margin-bottom: 2rem;
     grid-template-areas: "sidebar main";
+
 }
 
 .sidebar {
@@ -47,6 +46,8 @@ body {
     grid-area: main;
     background-color: var(--footer-color);
     padding: 10px;
+    border: 2px solid var(--skyblue);
+
     margin-right: 1rem;
     border-radius: 10px;
 
@@ -59,20 +60,27 @@ body {
     text-align: justify;
     line-height: 20px;
 }
-.sidebar .cdiv{
-    /* background-color: var(--footer-color); */
+
+.sidebar .cdiv {
     border-radius: 10px;
-    /* width: 90%; */
     height: 100%;
+    position: sticky;
+    top: 0;
 }
-.sidebar .cdiv ul{
+
+.sidebar .cdiv ul {
     list-style: none;
     padding: 10px;
     line-height: 25px;
+    cursor: pointer;
 }
-.map {
-    background-color: var(--hotish);
-    height: 30vh;
+.cdiv a{
+    text-decoration: none;
+    color: var(--para);
+}
+
+.maphai {
+    height: 60vh;
 }
 
 /* For small screen media starts*/
@@ -86,7 +94,7 @@ body {
     }
 
     .main {
-        margin-right: 0;
+        margin-right: 10px;
     }
 
     .sidebar {
@@ -149,7 +157,8 @@ body {
     .e-card {
         margin: 100px auto;
     }
-    .card-mobile-hide{
+
+    .card-mobile-hide {
         display: none;
     }
 }
@@ -173,7 +182,7 @@ body {
     top: 0;
     margin-left: -50%;
     margin-top: -70%;
-    background: linear-gradient(744deg,  #FF3FA4,  #525FE1 60%, #010a12);
+    background: linear-gradient(744deg, #FF3FA4, #525FE1 60%, #010a12);
 }
 
 .icon {
