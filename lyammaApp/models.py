@@ -43,3 +43,15 @@ class launchPartner(models.Model):
 
     def __str__(self):
         return "Approved " + self.restaurantname + " owner " + "--" + self.fullname
+    
+
+class Contact(models.Model):
+    sno = models.AutoField(primary_key=True)
+    cname = models.CharField(max_length=40)
+    cemail = models.CharField(max_length=100)
+    cphone = models.CharField(max_length=17)
+    content = models.TextField()
+    timeStamp = models.DateTimeField(auto_now_add=True, blank=True)
+    
+    def __str__(self):
+        return "Contact by " + self.cname + " email " + "--" + self.cemail

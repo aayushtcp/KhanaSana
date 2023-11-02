@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "itemname": "Momo",
+        "itemname": "Chalyo",
         "price": 100,
         "itemcode": "g200",
         "image": "../../static/check.jpg"

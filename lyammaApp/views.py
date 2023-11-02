@@ -3,7 +3,7 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import PartnerRequest,launchPartner, AllItems
+from .models import PartnerRequest,launchPartner, AllItems,Contact
 # Create your views here.
 
 # For index Page / Landing Page / Home Page
@@ -114,4 +114,8 @@ def about(request):
 
 
 def contactus(request):
-    return render(request, 'contactus.html')
+    if request.method == 'POST':
+        contact = Contact.objects.all()
+        
+        
+        return render(request, 'contactus.html')
