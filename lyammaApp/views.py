@@ -101,7 +101,7 @@ def restaurantlist(request):
 def restaurantProfile(request,slug):
     partnersappro = launchPartner.objects.filter(slug=slug).first()
     context = {"partnersappro": partnersappro}
-    return render(request, "fun.html", context)
+    return render(request, "restaurantProfile.html", context)
 
     # approvedPartners = launchPartner.objects.all()
     # print(approvedPartners)
@@ -115,7 +115,12 @@ def about(request):
 
 def contactus(request):
     if request.method == 'POST':
-        contact = Contact.objects.all()
-        
-        
-        return render(request, 'contactus.html')
+        cname = request.POST['cname']
+        cemail = request.POST['cemail']
+        cphone = request.POST['cphone']
+        content = request.POST['content']
+        contact = Contact(cname=cname,cemail=cemail, cphone=cphone, content=content)
+        print(contact)
+        messages.success(request, "Message Received!")
+        # contact.save()
+    return render(request, 'contactus.html')

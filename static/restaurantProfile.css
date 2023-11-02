@@ -277,3 +277,7 @@ ol li {
     background-color: var(--hotish);
     border: 2px solid var(--mainheading);
 }
+
+#joo{
+    visibility: hidden;
+}

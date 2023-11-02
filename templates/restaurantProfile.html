@@ -18,8 +18,8 @@
     {% block content %}
     <div class="main" style="background-image: url(/static/check.jpg);"></div>
     <div class="our-items">
-        <h2 class="head1">Our Items</h2>
-        <h2></h2>
+        <h2 class="head1">{{partnersappro.restaurantname}}: Our Items</h2>
+        <!-- <h2></h2> -->
     </div>
     <div class="itemsandcart">
         <div class="itemharu" id="data-output">
@@ -35,6 +35,8 @@
                 </ol>
 
                 <div class="trr">
+
+
                 </div>
 
                 <br>
@@ -46,11 +48,15 @@
             </div>
         </div>
     </div>
-    
+    <h1 id="joo">{{partnersappro.restaurantname}}</h1>
     <script>
-        // fetch("bhimbhaiitems.json")
-        // fetch("{% static '{{post.jfile}}.json'%}")
-        fetch("{% static 'bhimbhaiitems.json'%}")
+        // for dynamic json fetch system using json
+        let rName = document.querySelector('#joo');
+        let forjson = rName.innerHTML;
+        STATIC_URL = "/static";
+        fetch(`${STATIC_URL}/${forjson}.json`)
+            //dynamic json fetch system ends
+
             .then(function (response) {
                 return response.json();
             })
