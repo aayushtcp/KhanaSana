@@ -1,0 +1,181 @@
+{% extends 'base.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block base_style%}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'contactus.css' %}">
+    {% endblock base_style%}
+    <title>Restaurant | Profile</title>
+</head>
+
+<body>
+    {% block content %}
+    <!-- Banner starts -->
+    <hr>
+    <div class="index-banner">
+        <h3>Contact Us</h3>
+        <h1>We'd love to hear from you!</h1>
+        <!-- <p>Ever wanted to show your Beatboxing Skills on Swissbeatbox? Submit your Video now to the Community section
+            where thousands of Beatbox fans will see it. The best videos will be featured regularly.</p> -->
+
+
+        <button class="banner-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                </path>
+            </svg>
+
+            <div class="text">
+                Order
+            </div>
+        </button>
+    </div>
+    <hr>
+    <!-- Banner end -->
+
+    <!-- Contact Form starts -->
+    <div class="main_contactus">
+        <div class="contact_container">
+            <div class="content">
+                <div class="left-side">
+
+
+                    <div class="email details">
+                        <i class="fas fa-envelope"></i>
+                        <div class="topic">Email</div>
+                        <div class="text-one">lyammakyamma@gmail.com</div>
+                        <div class="text-two">test@gmail.com</div>
+                    </div>
+                    <div class="phone details">
+                        <i class="fas fa-phone"></i>
+                        <div class="topic">Phone</div>
+                        <div class="text-one">057-000000</div>
+                        <div class="text-two">+977 9800000000</div>
+                    </div>
+                    <div class="address details">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="topic">Address</div>
+                        <div class="text-one">Hetauda 07</div>
+                        <div class="text-two">Kamane</div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="topic-text">Send Us a <span class="design">Message</span></div>
+                    <p>If you want to ask a questions or if you need general enquiry from us then you can get in touch
+                        with us.
+                    </p>
+                    <form action="" method="post">
+                        <!-- {% csrf_token %} -->
+                        <div class="input-box" data-aos="fade-up">
+                            <input type="text" name="name" placeholder="Enter your name">
+                        </div>
+                        <div class="input-box" data-aos="fade-up">
+                            <input type="email" name="email" placeholder="Enter your email">
+                        </div>
+                        <div class="input-box" data-aos="fade-up">
+                            <input type="phone" name="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="input-box message-box" data-aos="fade-up">
+                            <textarea name="content" placeholder="Please enter your message..."></textarea>
+                        </div>
+                        <div class="cbutton">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Form ends -->
+
+    <!-- Filler starts -->
+    <div class="filler-container">
+        <h1>Are you <span>Foodie</span>?</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, debitis.</p>
+    </div>
+    <!-- Filler ends -->
+
+    <!-- contact card starts -->
+
+    <section class="articles">
+        <article>
+            <div class="article-wrapper">
+                <figure>
+                    <img src="{% static 'check.jpg' %}" alt="" />
+                </figure>
+                <div class="article-body">
+                    <h2>This is some title</h2>
+                    <p>
+                        Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue
+                        bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+                    </p>
+                    <a href="#" class="read-more">
+                        Read more <span class="sr-only">about this is some title</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+        <article>
+
+            <div class="article-wrapper">
+                <figure>
+                    <img src="{% static 'check.jpg' %}" alt="" />
+                </figure>
+                <div class="article-body">
+                    <h2>This is some title</h2>
+                    <p>
+                        Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue
+                        bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+                    </p>
+                    <a href="#" class="read-more">
+                        Read more <span class="sr-only">about this is some title</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+        <article>
+
+            <div class="article-wrapper">
+                <figure>
+                    <img src="{% static 'check.jpg' %}" alt="" />
+                </figure>
+                <div class="article-body">
+                    <h2>This is some title</h2>
+                    <p>
+                        Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue
+                        bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+                    </p>
+                    <a href="#" class="read-more">
+                        Read more <span class="sr-only">about this is some title</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!-- contact card ens -->
+    {% endblock %}
+</body>
+
+</html>

@@ -371,7 +371,7 @@ html {
     color: red;
 }
 
-form {
+.modal form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -380,11 +380,11 @@ form {
 }
 
 
-form span {
+.modal form span {
     color: var(--hotish);
 }
 
-form .primary-input {
+.modal form .primary-input {
     height: 40px;
     width: 18vw;
     font-weight: bold;
@@ -471,7 +471,7 @@ form .primary-input {
         width: 90vw;
         border: 3px solid var(--skyblue);
     }
-    form .primary-input {
+    .modal form .primary-input {
         height: 40px;
         width: 67vw;
         font-weight: bold;
