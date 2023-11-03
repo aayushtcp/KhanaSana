@@ -74,17 +74,21 @@
                     <form action="" method="post">
                         {% csrf_token %}
                         <div class="input-box" data-aos="fade-up">
-                            <input type="text" name="cname" placeholder="Enter your name">
+                            <input type="text" name="cname" placeholder="Enter your name" onkeyup="validName(this)">
                         </div>
+                        <div id="nameError"></div>
                         <div class="input-box" data-aos="fade-up">
                             <input type="email" name="cemail" placeholder="Enter your email">
                         </div>
                         <div class="input-box" data-aos="fade-up">
-                            <input type="phone" name="cphone" placeholder="Enter your phone number">
+                            <input type="phone" name="cphone" placeholder="Enter your phone number" onkeyup="validPhone(this)">
                         </div>
+                        <div id="phoneError"></div>
                         <div class="input-box message-box" data-aos="fade-up">
-                            <textarea name="content" placeholder="Please enter your message..."></textarea>
+                            <textarea name="content" placeholder="Please enter your message..."
+                                onkeyup="validMessage(this)"></textarea>
                         </div>
+                        <div id="contentError"></div>
                         <div class="cbutton">
                             <input type="submit" value="Submit">
                         </div>
@@ -174,6 +178,7 @@
             </div>
         </article>
     </section>
+    <script src="{%static 'contactus.js' %}"></script>
     <!-- contact card ens -->
     {% endblock %}
 </body>
