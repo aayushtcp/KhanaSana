@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -5,13 +6,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block base_style%}
+    {{ block.super }}
     <link rel="stylesheet" href="{% static 'chainekura.css' %}">
+    {% endblock base_style%}
     <script src="https://kit.fontawesome.com/c57b7eb6b9.js" crossorigin="anonymous"></script>
 
     <title>Chaine | Kura</title>
 </head>
 
 <body>
+    {% block content %}
     <br>
     <br>
     <button class="button" style="vertical-align:middle"><span>Order</span></button>
@@ -169,6 +174,109 @@
     <!-- card prototype 1  end -->
 
 
+    <!-- Stick carousel starts -->
+    <div class="slidee">
+        <div class="ss-container">
+            <div class="slider-wrapper">
+                <button id="prev-slide" class="slide-button material-symbols-rounded">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="image-list">
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-1" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-2" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-3" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-4" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-5" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-6" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-7" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-8" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-9" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-10" />
+                </ul>
+                <button id="next-slide" class="slide-button material-symbols-rounded">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="slider-scrollbar">
+                <div class="scrollbar-track">
+                    <div class="scrollbar-thumb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Stick carousel ends -->
+
+    <script>
+        const initSlider = () => {
+            const imageList = document.querySelector(".slider-wrapper .image-list");
+            const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
+            const sliderScrollbar = document.querySelector(".ss-container .slider-scrollbar");
+            const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+            const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+
+            // Handle scrollbar thumb drag
+            scrollbarThumb.addEventListener("mousedown", (e) => {
+                const startX = e.clientX;
+                const thumbPosition = scrollbarThumb.offsetLeft;
+                const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+
+                // Update thumb position on mouse move
+                const handleMouseMove = (e) => {
+                    const deltaX = e.clientX - startX;
+                    const newThumbPosition = thumbPosition + deltaX;
+
+                    // Ensure the scrollbar thumb stays within bounds
+                    const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+                    const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+
+                    scrollbarThumb.style.left = `${boundedPosition}px`;
+                    imageList.scrollLeft = scrollPosition;
+                }
+
+                // Remove event listeners on mouse up
+                const handleMouseUp = () => {
+                    document.removeEventListener("mousemove", handleMouseMove);
+                    document.removeEventListener("mouseup", handleMouseUp);
+                }
+
+                // Add event listeners for drag interaction
+                document.addEventListener("mousemove", handleMouseMove);
+                document.addEventListener("mouseup", handleMouseUp);
+            });
+
+            // Slide images according to the slide button clicks
+            slideButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const direction = button.id === "prev-slide" ? -1 : 1;
+                    const scrollAmount = imageList.clientWidth * direction;
+                    imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+                });
+            });
+
+            // Show or hide slide buttons based on scroll position
+            const handleSlideButtons = () => {
+                slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
+                slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+            }
+
+            // Update scrollbar thumb position based on image scroll
+            const updateScrollThumbPosition = () => {
+                const scrollPosition = imageList.scrollLeft;
+                const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+                scrollbarThumb.style.left = `${thumbPosition}px`;
+            }
+
+            // Call these two functions when image list scrolls
+            imageList.addEventListener("scroll", () => {
+                updateScrollThumbPosition();
+                handleSlideButtons();
+            });
+        }
+
+        window.addEventListener("resize", initSlider);
+        window.addEventListener("load", initSlider);
+    </script>
+    {% endblock %}
 </body>
 
 </html>

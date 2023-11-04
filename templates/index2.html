@@ -1,0 +1,982 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block base_style%}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'chainekura.css' %}">
+    {% endblock base_style%}
+    <script src="https://kit.fontawesome.com/c57b7eb6b9.js" crossorigin="anonymous"></script>
+
+    <title>Chaine | Kura</title>
+</head>
+
+<body>
+    {% block content %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+
+        :root {
+            --bcolor: #00101F;
+            --footer-color: #010a12;
+            --mainheading: #F4CE14;
+            --para: #fff6f4;
+            --hotish: #FF3FA4;
+            --skyblue: #525FE1;
+            --suntala: rgb(152, 79, 0);
+        }
+
+        html {
+            background: var(--bcolor)
+                /* background-color: #fff6f4; */
+        }
+
+        /* =============================== */
+        /* Button CSS start */
+        /* =============================== */
+
+        .button {
+            display: inline-block;
+            border-radius: 7px;
+            border: none;
+            background: var(--skyblue);
+            color: var(--para);
+            font-family: inherit;
+            text-align: center;
+            font-size: 13px;
+            box-shadow: 0px 14px 56px -11px var(--skyblue);
+            width: 10em;
+            padding: 1em;
+            transition: all 0.4s;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.4s;
+        }
+
+        .button span:after {
+            content: 'Now';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.7s;
+        }
+
+        .button:hover span {
+            padding-right: 3.55em;
+        }
+
+        .button:hover span:after {
+            opacity: 4;
+            right: 0;
+        }
+
+        /* =============================== */
+        /* Button CSS End */
+        /* =============================== */
+
+
+        /* =============================== */
+        /* Banner CSS starts */
+        /* =============================== */
+
+        .index-banner {
+            height: 40vh;
+            background-color: var(--bcolor);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            animation: bannerloop 20s linear infinite;
+        }
+
+        .index-banner h1 {
+            font-size: 48px;
+            color: var(--bcolor);
+        }
+
+        .index-banner h3 {
+            color: var(--bcolor);
+        }
+
+        .index-banner p {
+            color: var(--bcolor);
+            text-align: center;
+            padding: 10px 40px;
+        }
+
+        /* banner button starts */
+        .banner-button {
+            background-color: var(--bcolor);
+            color: var(--para);
+            width: 8.5em;
+            height: 2.9em;
+            border: #3654ff 0.2em solid;
+            border-radius: 11px;
+            text-align: right;
+            transition: all 0.6s ease;
+        }
+
+        .banner-button:hover {
+            background-color: #2675be;
+            cursor: pointer;
+            color: var(--para);
+        }
+
+        .banner-button svg {
+            width: 1.6em;
+            margin: -0.2em 0.8em 1em;
+            position: absolute;
+            display: flex;
+            transition: all 0.6s ease;
+        }
+
+        .banner-button:hover svg {
+            transform: translateX(5px);
+        }
+
+        .banner-button .text {
+            font-weight: bold;
+            margin: 0 1.5em
+        }
+
+        @keyframes bannerloop {
+            0% {
+                background-color: #26fa9a;
+            }
+
+            25% {
+                background-color: #fcee67;
+            }
+
+            50% {
+                background-color: #ff4081;
+            }
+
+            75% {
+                background-color: #18ffff;
+            }
+
+            100% {
+                background-color: #26fa9a;
+            }
+        }
+
+        /* for big screen */
+        @media(min-width: 980px) {
+            .index-banner {
+                height: 55vh;
+            }
+
+            .index-banner p {
+                padding: 0 30rem;
+                line-height: 22px;
+            }
+
+            .banner-button {
+                margin-top: 20px;
+            }
+        }
+
+        /* banner button ends */
+        /* =============================== */
+        /* Banner CSS End */
+        /* =============================== */
+
+
+        /* =============================== */
+        /* Card CSS Starts */
+        /* =============================== */
+
+        .cards {
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-around;
+        }
+
+        .maincard {
+            background: url("/static/check.jpg")no-repeat;
+            box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
+            height: 10vh;
+            width: 30vw;
+            padding: 10vw;
+            background-position: center center;
+            background-size: cover;
+            filter: brightness(85%);
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .card-contents {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-contents h2 {
+            text-align: center;
+            color: var(--hotish);
+            font-size: x-large;
+        }
+
+        .card-btn {
+            align-self: center;
+        }
+
+        /* =============================== */
+        /* Card CSS End */
+        /* =============================== */
+        /* for small screem */
+        @media(max-width: 980px) {
+            .cards {
+                padding: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .maincard {
+                background: url("/static/check.jpg")no-repeat;
+                box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
+                height: 20vh;
+                width: 40vw;
+                padding: 10vw;
+                background-position: center center;
+                background-size: cover;
+                filter: brightness(85%);
+                cursor: pointer;
+                border-radius: 10px;
+            }
+        }
+
+
+        /* =============================== */
+        /* Count card CSS Start */
+        /* =============================== */
+        .count-container {
+            display: flex;
+            /* display: -ms-grid; */
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .count-card {
+            padding: 10px;
+            color: var(--para);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 65px;
+            width: 55%;
+            border-radius: 5px;
+            box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
+            margin: auto;
+            background-color: var(--footer-color);
+        }
+
+        .count-card .count-card-left {
+            text-align: center;
+            align-items: center;
+            display: flex;
+            gap: 20px;
+        }
+
+        .count-card .count-card-right {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            gap: 17px;
+        }
+
+        .count-card .count-card-right i {
+            cursor: pointer;
+            padding: 2px;
+            border: 1px solid var(--para);
+        }
+
+        .count-card img {
+            width: 50px;
+            border: 1px solid var(--para);
+            box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
+            height: 50px;
+        }
+
+        /* for small screen */
+        @media(max-width: 980px) {
+            .count-card {
+                width: 90%;
+            }
+
+            .count-card .count-card-left h3 {
+                font-size: 15px;
+            }
+
+            .count-card .count-card-right {
+                gap: 10px;
+            }
+        }
+
+        /* =============================== */
+        /* Count card CSS End */
+        /* =============================== */
+
+
+        /* =============================== */
+        /* Stick carousel CSS starts */
+        /* =============================== */
+        .ss-container {
+            max-width: 1200px;
+            width: 95%;
+        }
+
+        .slider-wrapper {
+            position: relative;
+        }
+
+        .slider-wrapper .slide-button {
+            position: absolute;
+            top: 50%;
+            outline: none;
+            border: none;
+            height: 50px;
+            width: 50px;
+            z-index: 5;
+            color: #fff;
+            display: flex;
+            cursor: pointer;
+            font-size: 2.2rem;
+            background: #000;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .slider-wrapper .slide-button:hover {
+            background: #404040;
+        }
+
+        .slider-wrapper .slide-button#prev-slide {
+            left: -25px;
+            display: none;
+        }
+
+        .slider-wrapper .slide-button#next-slide {
+            right: -25px;
+        }
+
+        .slider-wrapper .image-list {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 18px;
+            font-size: 0;
+            list-style: none;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .slider-wrapper .image-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slider-wrapper .image-list .image-item {
+            width: 325px;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .container .slider-scrollbar {
+            height: 24px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .slider-scrollbar .scrollbar-track {
+            background: #ccc;
+            width: 100%;
+            height: 2px;
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .slider-scrollbar:hover .scrollbar-track {
+            height: 4px;
+        }
+
+        .slider-scrollbar .scrollbar-thumb {
+            position: absolute;
+            background: #000;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            height: 100%;
+            cursor: grab;
+            border-radius: inherit;
+        }
+
+        .slider-scrollbar .scrollbar-thumb:active {
+            cursor: grabbing;
+            height: 8px;
+            top: -2px;
+        }
+
+        .slider-scrollbar .scrollbar-thumb::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -10px;
+            bottom: -10px;
+        }
+
+        /* Styles for mobile and tablets */
+        @media only screen and (max-width: 1023px) {
+            .slider-wrapper .slide-button {
+                display: none !important;
+            }
+
+            .slider-wrapper .image-list {
+                gap: 10px;
+                margin-bottom: 15px;
+                scroll-snap-type: x mandatory;
+            }
+
+            .slider-wrapper .image-list .image-item {
+                width: 280px;
+                height: 380px;
+            }
+
+            .slider-scrollbar .scrollbar-thumb {
+                width: 20%;
+            }
+        }
+
+        .slidee {
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* =============================== */
+        /* Stick carousel CSS End */
+        /* =============================== */
+
+
+
+        /* Partner section css starts */
+        .partner {
+            box-shadow: 0px 14px 56px -11px var(--skyblue);
+            color: var(--para);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: var(--footer-color);
+            padding: 30px;
+            margin: 0 auto 1rem;
+            width: 40%;
+            border-radius: 7px;
+            border: 2px solid var(--skyblue);
+        }
+
+        .partner h3 {
+            font-family: 'Courier New', monospace;
+            font-weight: lighter;
+        }
+
+        .partner span {
+            border-bottom: 3px solid var(--mainheading);
+        }
+
+        /* for small screem */
+        /* @media(max-width: 980px) {
+    .overlay3{
+        width: 90vw;
+    }
+} */
+
+        /* Styling for the overlay3 */
+        .overlay3 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        /* Styling for the modal3 */
+        .modal3 {
+            height: 82vh;
+            width: 45vw;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -45%);
+            background-color: var(--footer-color);
+            padding: 20px;
+            color: var(--para);
+            border-radius: 5px;
+            box-shadow: rgba(48, 48, 204, 0.734) 0px 7px 29px 0px;
+            z-index: 2222;
+            border: 2px solid var(--skyblue);
+        }
+
+        /* Styling for the close button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        .partner-form form {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .partner-form .main-combo-box {
+            padding: 15px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .partner-form .combo-inputs {
+            background-color: #6B7280;
+            height: 40px;
+            width: 20vw;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px;
+            color: var(--para);
+            border: none;
+            border-radius: 7px;
+        }
+
+        .partner-form textarea {
+            height: 30%;
+            width: 100%;
+            font-weight: bold;
+            background-color: #d0d0d0;
+            font-size: 20px;
+            padding: 10px;
+            color: var(--footer-color);
+            border: none;
+            border-radius: 7px;
+        }
+
+        .partner-form form span {
+            color: var(--hotish);
+        }
+
+
+
+
+        /* =============================== */
+        /* Sign up modal3 CSS Start */
+        /* =============================== */
+
+
+        /* =============================== */
+        /* Sign up Button CSS Start */
+        /* =============================== */
+
+        /* CSS */
+        .button-79 {
+            backface-visibility: hidden;
+            background: var(--skyblue);
+            border: 0;
+            border-radius: .375rem;
+            box-sizing: border-box;
+            color: var(--para);
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1.125rem;
+            font-weight: bold;
+            letter-spacing: -.01em;
+            line-height: 1;
+            padding: 1rem 1.25rem;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transform: translateZ(0) scale(1);
+            transition: transform .2s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-79:disabled {
+            color: #787878;
+            cursor: auto;
+        }
+
+        .button-79:not(:disabled):hover {
+            transform: scale(1.05);
+        }
+
+        .button-79:not(:disabled):hover:active {
+            transform: scale(1.05) translateY(.125rem);
+        }
+
+        .button-79:focus {
+            outline: 0 solid transparent;
+        }
+
+        .button-79:focus:before {
+            border-width: .125rem;
+            content: "";
+            left: calc(-1*.375rem);
+            pointer-events: none;
+            position: absolute;
+            top: calc(-1*.375rem);
+            transition: border-radius;
+            user-select: none;
+        }
+
+        .button-79:focus:not(:focus-visible) {
+            outline: 0 solid transparent;
+        }
+
+        .button-79:not(:disabled):active {
+            transform: translateY(.125rem);
+        }
+
+        @media(max-width: 980px) {
+            .partner {
+                padding: .6rem;
+                width: 90vw;
+                height: 32vh;
+            }
+
+
+            .modal {
+                height: 62vh;
+                width: 90vw;
+                border: 3px solid var(--skyblue);
+            }
+
+            .partner-form .primary-input {
+                height: 40px;
+                width: 67vw;
+                font-weight: bold;
+                font-size: 20px;
+                padding: 10px;
+                color: var(--footer-color);
+                border: none;
+                border-radius: 7px;
+            }
+        }
+
+        /* Send a request button CSS starts */
+        /* CSS */
+        .button-40 {
+            background-color: #111827;
+            border: 1px solid var(--mainheading);
+            border-radius: .75rem;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            flex: 0 0 auto;
+            font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1.125rem;
+            font-weight: 600;
+            line-height: 1.5rem;
+            padding: .75rem 1.2rem;
+            text-align: center;
+            text-decoration: none #6B7280 solid;
+            text-decoration-thickness: auto;
+            transition-duration: .2s;
+            transition-property: background-color, border-color, color, fill, stroke;
+            transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            width: 50%;
+            margin-bottom: 1rem;
+            transition: 0.4s ease-in-out;
+        }
+
+        .button-40:hover {
+            background-color: #374151;
+            transform: rotate(8deg);
+        }
+
+        .button-40:focus {
+            box-shadow: none;
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+
+        @media (min-width: 768px) {
+            .button-40 {
+                margin-top: 1rem;
+                padding: .75rem 1.5rem;
+                width: 33%;
+            }
+        }
+
+    .bannerimage1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+    .bannerimage1 img{
+        width: 90%;
+    }
+    @media (max-width: 768px) {
+        .bannerimage1 img{
+            width: 100%;
+        }
+    }
+    </style>
+    <!-- Banner starts -->
+    <hr>
+    <div class="index-banner">
+        <h3>Special Lyamma Mo:Mo</h3>
+        <h1>Delicious as fuck</h1>
+        <p>Ever wanted to show your Beatboxing Skills on Swissbeatbox? Submit your Video now to the Community section
+            where thousands of Beatbox fans will see it. The best videos will be featured regularly.</p>
+
+
+        <button class="banner-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                </path>
+            </svg>
+
+            <div class="text">
+                Order
+            </div>
+        </button>
+    </div>
+    <hr>
+    <!-- Banner end -->
+
+    <!-- Stick carousel starts -->
+    <div class="slidee">
+        <div class="ss-container">
+            <div class="slider-wrapper">
+                <button id="prev-slide" class="slide-button material-symbols-rounded">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <ul class="image-list">
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-1" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-2" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-3" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-4" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-5" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-6" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-7" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-8" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-9" />
+                    <img class="image-item" src="{% static 'check.jpg' %}" alt="img-10" />
+                </ul>
+                <button id="next-slide" class="slide-button material-symbols-rounded">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="slider-scrollbar">
+                <div class="scrollbar-track">
+                    <div class="scrollbar-thumb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Stick carousel ends -->
+
+
+    <!-- banner image 1 starts -->
+    <div class="bannerimage1">
+        <img src="{% static 'bannerimage1.jpg' %}" alt="lyamma-banner">
+    </div>
+    <!-- banner image 1 ends -->
+    <div class="partner">
+        <h2>Partner <span>with us </span></h2>
+        <h3>List your restaurant with us and Reach several new customers through us!</h3>
+        <p>Get your menu items delivered to our customer's door-step.</p>
+        <button class="button-40" role="button" id="partner-btn">Send a Request</button>
+    </div>
+
+
+    <!-- Partner form starts -->
+    <div class="overlay3" id="modalOverlay3">
+        <div class="modal3">
+            <span class="close" id="closeModal3">&times;</span>
+            <!-- Your sign-up form goes here -->
+            <div class="partner-form">
+                <form action="/partnerrequest/" method="post">
+                    {% csrf_token %}
+                    <h2>Join <span>Us</span></h2>
+                    <div class="main-combo-box">
+                        <div class="div-left">
+                            <label for="fullname">Fullname*</label>
+                            <br>
+                            <input class="combo-inputs" type="text" name="fullname" id="">
+                        </div>
+                        <div class="div-right">
+                            <label for="fullname">Restaurant Name*</label>
+                            <br>
+                            <input class="combo-inputs" type="text" name="restaurantname" id="">
+                        </div>
+                    </div>
+                    <div class="main-combo-box">
+                        <div class="div-left">
+                            <label for="fullname">Phone Number*</label>
+                            <br>
+                            <input class="combo-inputs" type="phone" name="phone" id="">
+                        </div>
+                        <div class="div-right">
+                            <label for="fullname">Email*</label>
+                            <br>
+                            <input class="combo-inputs" type="email" name="email" id="">
+                        </div>
+                    </div>
+
+                    <textarea name="message" placeholder="Enter you message here ..." id="" cols="30" rows="8"
+                        required></textarea>
+                    <input type="submit" value="Submit Request" name="" id="" class="button-79">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Partner form ends -->
+
+    <script>
+        const initSlider = () => {
+            const imageList = document.querySelector(".slider-wrapper .image-list");
+            const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
+            const sliderScrollbar = document.querySelector(".ss-container .slider-scrollbar");
+            const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+            const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+
+            // Handle scrollbar thumb drag
+            scrollbarThumb.addEventListener("mousedown", (e) => {
+                const startX = e.clientX;
+                const thumbPosition = scrollbarThumb.offsetLeft;
+                const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+
+                // Update thumb position on mouse move
+                const handleMouseMove = (e) => {
+                    const deltaX = e.clientX - startX;
+                    const newThumbPosition = thumbPosition + deltaX;
+
+                    // Ensure the scrollbar thumb stays within bounds
+                    const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+                    const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+
+                    scrollbarThumb.style.left = `${boundedPosition}px`;
+                    imageList.scrollLeft = scrollPosition;
+                }
+
+                // Remove event listeners on mouse up
+                const handleMouseUp = () => {
+                    document.removeEventListener("mousemove", handleMouseMove);
+                    document.removeEventListener("mouseup", handleMouseUp);
+                }
+
+                // Add event listeners for drag interaction
+                document.addEventListener("mousemove", handleMouseMove);
+                document.addEventListener("mouseup", handleMouseUp);
+            });
+
+            // Slide images according to the slide button clicks
+            slideButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const direction = button.id === "prev-slide" ? -1 : 1;
+                    const scrollAmount = imageList.clientWidth * direction;
+                    imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+                });
+            });
+
+            // Show or hide slide buttons based on scroll position
+            const handleSlideButtons = () => {
+                slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
+                slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+            }
+
+            // Update scrollbar thumb position based on image scroll
+            const updateScrollThumbPosition = () => {
+                const scrollPosition = imageList.scrollLeft;
+                const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+                scrollbarThumb.style.left = `${thumbPosition}px`;
+            }
+
+            // Call these two functions when image list scrolls
+            imageList.addEventListener("scroll", () => {
+                updateScrollThumbPosition();
+                handleSlideButtons();
+            });
+        }
+
+        window.addEventListener("resize", initSlider);
+        window.addEventListener("load", initSlider);
+
+        // partner script
+        // Get references to the modal and overlay
+        var modal3 = document.getElementById("modalOverlay3");
+        var openButton = document.getElementById("partner-btn");
+        var closeButton = document.getElementById("closeModal3");
+
+        // Open the modal when the "Sign Up" button is clicked
+        openButton.addEventListener("click", function () {
+            modal3.style.display = "block";
+        });
+
+        // Close the modal when the close button is clicked
+        closeButton.addEventListener("click", function () {
+            modal3.style.display = "none";
+        });
+
+        // Close the modal when the overlay (outside the modal) is clicked
+        modal3.addEventListener("click", function (event) {
+            if (event.target === modal3) {
+                modal3.style.display = "none";
+            }
+        });
+
+    </script>
+    {% endblock %}
+</body>
+
+</html>

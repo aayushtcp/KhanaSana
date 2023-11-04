@@ -7,10 +7,8 @@ from .models import PartnerRequest,launchPartner, AllItems,Contact
 # Create your views here.
 
 # For index Page / Landing Page / Home Page
-
-
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index2.html')
 
 def handleSignup(request):
     if request.method == 'POST':
