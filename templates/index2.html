@@ -429,7 +429,7 @@
 
         .slider-scrollbar .scrollbar-thumb {
             position: absolute;
-            background: #000;
+            background: var(--hotish);
             top: 0;
             bottom: 0;
             width: 50%;
@@ -754,44 +754,289 @@
             }
         }
 
-    .bannerimage1{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1.5rem;
-    }
-    .bannerimage1 img{
-        width: 90%;
-    }
-    @media (max-width: 768px) {
-        .bannerimage1 img{
+
+        /* article card css start */
+
+        @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
+
+        :root {
+            /* Colors */
+            --brand-color: hsl(46, 100%, 50%);
+            --black: hsl(0, 0%, 0%);
+            --white: hsl(0, 0%, 100%);
+            /* Fonts */
+            --font-title: "Montserrat", sans-serif;
+            --font-text: "Lato", sans-serif;
+        }
+
+        /* RESET */
+
+
+        .card h2 {
+            font-size: 2.25rem;
+            font-family: var(--font-title);
+            color: var(--white);
+            line-height: 1.1;
+        }
+
+        .card p {
+            font-family: var(--font-text);
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--white);
+        }
+
+        .flow>*+* {
+            margin-top: var(--flow-space, 1em);
+        }
+
+        /* CARD COMPONENT */
+
+        .card-container {
+            padding: 1rem 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            display: grid;
+            place-items: center;
+            width: 80vw;
+            max-width: 21.875rem;
+            height: 28.125rem;
+            overflow: hidden;
+            border-radius: 0.625rem;
+            box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+        }
+
+        .card>* {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        .card__background {
+            object-fit: cover;
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .card__content {
+            --flow-space: 0.9375rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-self: flex-end;
+            height: 55%;
+            padding: 12% 1.25rem 1.875rem;
+            background: linear-gradient(180deg,
+                    hsla(0, 0%, 0%, 0) 0%,
+                    hsla(0, 0%, 0%, 0.3) 10%,
+                    hsl(0, 0%, 0%) 100%);
+        }
+
+        .card__content--container {
+            --flow-space: 1.25rem;
+        }
+
+        .card__title {
+            position: relative;
+            width: fit-content;
+            width: -moz-fit-content;
+            /* Prefijo necesario para Firefox  */
+        }
+
+        .card__title::after {
+            content: "";
+            position: absolute;
+            height: 0.3125rem;
+            width: calc(100% + 1.25rem);
+            bottom: calc((1.25rem - 0.5rem) * -1);
+            left: -1.25rem;
+            background-color: var(--brand-color);
+        }
+
+        .card__button {
+            padding: 0.75em 1.6em;
+            width: fit-content;
+            width: -moz-fit-content;
+            /* Prefijo necesario para Firefox  */
+            font-variant: small-caps;
+            font-weight: bold;
+            border-radius: 0.45em;
+            border: none;
+            background-color: var(--brand-color);
+            font-family: var(--font-title);
+            font-size: 1.125rem;
+            color: var(--black);
+        }
+
+        .card__button:focus {
+            outline: 2px solid black;
+            outline-offset: -5px;
+        }
+
+        @media (any-hover: hover) and (any-pointer: fine) {
+            .card__content {
+                transform: translateY(62%);
+                transition: transform 500ms ease-out;
+                transition-delay: 500ms;
+            }
+
+            .card__title::after {
+                opacity: 0;
+                transform: scaleX(0);
+                transition: opacity 1000ms ease-in, transform 500ms ease-out;
+                transition-delay: 500ms;
+                transform-origin: right;
+            }
+
+            .card__background {
+                transition: transform 500ms ease-in;
+            }
+
+            .card__content--container> :not(.card__title),
+            .card__button {
+                opacity: 0;
+                transition: transform 500ms ease-out, opacity 500ms ease-out;
+            }
+
+            .card:hover,
+            .card:focus-within {
+                transform: scale(1.05);
+                transition: transform 500ms ease-in;
+            }
+
+            .card:hover .card__content,
+            .card:focus-within .card__content {
+                transform: translateY(0);
+                transition: transform 500ms ease-in;
+            }
+
+            .card:focus-within .card__content {
+                transition-duration: 0ms;
+            }
+
+            .card:hover .card__background,
+            .card:focus-within .card__background {
+                transform: scale(1.3);
+            }
+
+            .card:hover .card__content--container> :not(.card__title),
+            .card:hover .card__button,
+            .card:focus-within .card__content--container> :not(.card__title),
+            .card:focus-within .card__button {
+                opacity: 1;
+                transition: opacity 500ms ease-in;
+                transition-delay: 1000ms;
+            }
+
+            .card:hover .card__title::after,
+            .card:focus-within .card__title::after {
+                opacity: 1;
+                transform: scaleX(1);
+                transform-origin: left;
+                transition: opacity 500ms ease-in, transform 500ms ease-in;
+                transition-delay: 500ms;
+            }
+        }
+
+        /* article card css ends */
+
+        /* =============================== */
+        /* Banner 2 CSS starts */
+        /* =============================== */
+        .banner2-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner2-container .banner2 {
+            background-color: var(--hotish);
+            border-radius: 5px;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-shadow: 0 5px 10px #0005;
+            overflow: hidden;
+        }
+
+        .banner2-container .banner2 .left-img {
+            flex: 1 1 250px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .banner2-container .banner2 .left-img img {
+            width: 80%;
+        }
+
+        .banner2-container .banner2 .banner2-content {
+            flex: 1 1 250px;
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .banner2-container .banner2 .banner2-content span {
+            color: #fff;
+            font-size: 25px;
+        }
+
+        .banner2-container .banner2 .banner2-content h3 {
+            color: #fff;
+            font-size: 40px;
+        }
+
+        .banner2-container .banner2 .banner2-content p {
+            color: #fff;
+            font-size: 20px;
+            padding: 10px 0;
+        }
+
+        .banner2-container .banner2 .banner2-content .banner2-btn {
+            display: block;
+            height: 40px;
+            width: 150px;
+            line-height: 40px;
+            background-color: var(--skyblue);
+            color: var(--para);
+            margin: 5px auto;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.6s ease-in-out;
+        }
+        .banner2-container .banner2 .banner2-content .banner2-btn:hover{
+            border: 2px solid var(--mainheading);
+            transform: rotate(10deg);
+        }
+
+        .banner2-container .banner2 .right-img {
+            position: relative;
+            /* bottom: -33px; */
+            padding: 10px;
+            flex: 1 1 250px;
+            height: 450px;
+        }
+
+        .banner2-container .banner2 .right-img img {
             width: 100%;
         }
-    }
+
+        @media (max-width: 768px) {
+            .banner2-container .banner2 .right-img {
+                display: none;
+            }
+        }
+
+        /* =============================== */
+        /* Banner 2 CSS Ends */
+        /* =============================== */
     </style>
-    <!-- Banner starts -->
-    <hr>
-    <div class="index-banner">
-        <h3>Special Lyamma Mo:Mo</h3>
-        <h1>Delicious as fuck</h1>
-        <p>Ever wanted to show your Beatboxing Skills on Swissbeatbox? Submit your Video now to the Community section
-            where thousands of Beatbox fans will see it. The best videos will be featured regularly.</p>
-
-
-        <button class="banner-button">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
-                </path>
-            </svg>
-
-            <div class="text">
-                Order
-            </div>
-        </button>
-    </div>
-    <hr>
-    <!-- Banner end -->
 
     <!-- Stick carousel starts -->
     <div class="slidee">
@@ -824,13 +1069,110 @@
         </div>
     </div>
     <!-- Stick carousel ends -->
+    <!-- Banner starts -->
+    <hr>
+    <div class="index-banner">
+        <h3>Special Lyamma Mo:Mo</h3>
+        <h1>Delicious as fuck</h1>
+        <p>Ever wanted to show your Beatboxing Skills on Swissbeatbox? Submit your Video now to the Community section
+            where thousands of Beatbox fans will see it. The best videos will be featured regularly.</p>
 
 
-    <!-- banner image 1 starts -->
-    <div class="bannerimage1">
-        <img src="{% static 'bannerimage1.jpg' %}" alt="lyamma-banner">
+        <button class="banner-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
+                </path>
+            </svg>
+
+            <div class="text">
+                Order
+            </div>
+        </button>
     </div>
-    <!-- banner image 1 ends -->
+    <hr>
+    <!-- Banner end -->
+
+    <!-- card prototype 1 start -->
+    <div class="card-container">
+        <!-- card 1 satrts -->
+        <article class="card">
+            <img class="card__background" src="{% static 'testimg1.jpg'%}" alt="aayush dhakal" width="1920"
+                height="2193" />
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <h2 class="card__title">Chicken Wing</h2>
+                    <p class="card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+                        labore laudantium deserunt fugiat numquam.
+                    </p>
+                </div>
+                <button class="card__button">Read more</button>
+            </div>
+        </article>
+        <!-- card 1 satrts -->
+        <article class="card">
+            <img class="card__background" src="{% static 'testimg3.jpg'%}" alt="" width="1920" height="2193" />
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <h2 class="card__title">Icecream</h2>
+                    <p class="card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+                        labore laudantium deserunt fugiat numquam.
+                    </p>
+                </div>
+                <button class="card__button">Read more</button>
+            </div>
+        </article>
+        <!-- card 1 satrts -->
+        <article class="card">
+            <img class="card__background" src="{% static 'testimg5.jpg'%}" alt="" width="1920" height="2193" />
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <h2 class="card__title">Pasta</h2>
+                    <p class="card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+                        labore laudantium deserunt fugiat numquam.
+                    </p>
+                </div>
+                <button class="card__button">Read more</button>
+            </div>
+        </article>
+        <!-- card 1 satrts -->
+        <article class="card">
+            <img class="card__background" src="{% static 'testimg4.jpg'%}" alt="" width="1920" height="2193" />
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <h2 class="card__title">Burger</h2>
+                    <p class="card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+                        labore laudantium deserunt fugiat numquam.
+                    </p>
+                </div>
+                <button class="card__button">Read more</button>
+            </div>
+        </article>
+    </div>
+
+    <!-- Banner 2 starts -->
+    <div class="banner2-container">
+        <div class="banner2">
+            <div class="left-img">
+                <img src="{% static 'pburger.png' %}" alt="">
+            </div>
+            <div class="banner2-content">
+                <span>upto</span>
+                <h3>50% Off</h3>
+                <p>Offer ends after 5 days</p>
+                <a href="/restaurantlist" class="banner2-btn">View Offer</a>
+            </div>
+            <div class="right-img">
+                <img src="{% static 'lady.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Banner 2 ends -->
+
     <div class="partner">
         <h2>Partner <span>with us </span></h2>
         <h3>List your restaurant with us and Reach several new customers through us!</h3>

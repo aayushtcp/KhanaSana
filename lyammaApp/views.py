@@ -4,11 +4,18 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .models import PartnerRequest,launchPartner, AllItems,Contact
+
+# also for payment gateway
+from django.urls import reverse, reverse_lazy
+from django.views import View
+
+# esewa
+import requests as req
 # Create your views here.
 
 # For index Page / Landing Page / Home Page
 def index(request):
-    return render(request, 'chainekura.html')
+    return render(request, 'index.html')
 
 def handleSignup(request):
     if request.method == 'POST':
@@ -122,3 +129,23 @@ def contactus(request):
         messages.success(request, "Message Received!")
         # contact.save()
     return render(request, 'contactus.html')
+
+
+# esewa function
+class VerifyEsewa(View):
+    def get(self, request):  
+        url ="https://uat.esewa.com.np/epay/transrec"
+        q= request.GET.get('q')
+        d = {
+            'amt': request.GET.get('amt'),
+            'scd': 'EPAYTEST',
+            'rid': request.GET.get('refid'),
+            # 'rid': '000AE01',
+            'pid':request.GET.get('oid'),
+        }
+        resp = req.post(url, d)
+        print("Status:========", resp.status_code)
+        # print(resp.text) 
+        messages.success(
+                request, "Paymet ko adi kam bho!")
+        return redirect("/")  # redirect on home
