@@ -85,86 +85,71 @@
     <br>
     <br>
     <!-- card prototype 1 start -->
-    <div class="cards">
-        <!-- Card one starts -->
-        <div class="maincard">
-            <div class="card-contents">
-                <h2>Chicken Pizza</h2>
-                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
-                <button class="banner-button card-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
-                        </path>
-                    </svg>
-                    <div class="text">
-                        Order
-                    </div>
-                </button>
+    <div class="card-container">
+        <!-- card 1 satrts -->
+        <article class="card">
+            <img class="card__background" src="{% static 'testimg1.jpg'%}"
+                alt="aayush dhakal" width="1920"
+                height="2193" />
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <h2 class="card__title">Chicken Wing</h2>
+                    <p class="card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+                        labore laudantium deserunt fugiat numquam.
+                    </p>
+                </div>
+                <button class="card__button">Read more</button>
             </div>
-        </div>
-        <!-- Card one ends -->
-
-        <!-- Card two starts -->
-        <div class="maincard">
-            <div class="card-contents">
-                <h2>Buff Momo</h2>
-                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
-                <button class="banner-button card-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
-                        </path>
-                    </svg>
-                    <div class="text">
-                        Order
-                    </div>
-                </button>
+        </article>
+        <!-- card 1 satrts -->
+        <article class="card">
+            <img class="card__background" src="{% static 'testimg3.jpg'%}"
+                alt="" width="1920"
+                height="2193" />
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <h2 class="card__title">Icecream</h2>
+                    <p class="card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+                        labore laudantium deserunt fugiat numquam.
+                    </p>
+                </div>
+                <button class="card__button">Read more</button>
             </div>
-        </div>
-        <!-- Card two ends -->
-
-        <!-- Card three starts -->
-        <div class="maincard">
-            <div class="card-contents">
-                <h2>Veg Chowmein</h2>
-                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
-                <button class="banner-button card-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
-                        </path>
-                    </svg>
-                    <div class="text">
-                        Order
-                    </div>
-                </button>
+        </article>
+        <!-- card 1 satrts -->
+        <article class="card">
+            <img class="card__background" src="{% static 'testimg5.jpg'%}"
+                alt="" width="1920"
+                height="2193" />
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <h2 class="card__title">Pasta</h2>
+                    <p class="card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+                        labore laudantium deserunt fugiat numquam.
+                    </p>
+                </div>
+                <button class="card__button">Read more</button>
             </div>
-        </div>
-        <!-- Card three ends -->
-
-        <!-- Card four starts -->
-        <div class="maincard">
-            <div class="card-contents">
-                <h2>Buff Chowmein</h2>
-                <!-- <p>Lorem ipsum dolor sit amet.</p> -->
-                <button class="banner-button card-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75">
-                        </path>
-                    </svg>
-                    <div class="text">
-                        Order
-                    </div>
-                </button>
+        </article>
+        <!-- card 1 satrts -->
+        <article class="card">
+            <img class="card__background" src="{% static 'testimg4.jpg'%}"
+                alt="" width="1920"
+                height="2193" />
+            <div class="card__content | flow">
+                <div class="card__content--container | flow">
+                    <h2 class="card__title">Burger</h2>
+                    <p class="card__description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+                        labore laudantium deserunt fugiat numquam.
+                    </p>
+                </div>
+                <button class="card__button">Read more</button>
             </div>
-        </div>
-        <!-- Card four ends -->
+        </article>
     </div>
 
     <br>
@@ -205,6 +190,27 @@
         </div>
     </div>
     <!-- Stick carousel ends -->
+
+
+
+    <!-- Banner 2 starts -->
+    <div class="banner2-container">
+        <div class="banner2">
+            <div class="left-img">
+                <img src="{% static 'pburger.png' %}" alt="">
+            </div>
+            <div class="banner2-content">
+                <span>upto</span>
+                <h3>50% Off</h3>
+                <p>Offer ends after 5 days</p>
+                <a href="#" class="banner2-btn">View Offer</a>
+            </div>
+            <div class="right-img">
+                <img src="{% static 'lady.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Banner 2 ends -->
 
     <script>
         const initSlider = () => {

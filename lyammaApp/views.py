@@ -8,7 +8,7 @@ from .models import PartnerRequest,launchPartner, AllItems,Contact
 
 # For index Page / Landing Page / Home Page
 def index(request):
-    return render(request, 'index2.html')
+    return render(request, 'chainekura.html')
 
 def handleSignup(request):
     if request.method == 'POST':
