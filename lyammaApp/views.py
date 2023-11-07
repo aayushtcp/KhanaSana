@@ -3,6 +3,7 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+import uuid 
 from .models import PartnerRequest,launchPartner, AllItems,Contact
 
 # also for payment gateway
@@ -105,7 +106,9 @@ def restaurantlist(request):
 
 def restaurantProfile(request,slug):
     partnersappro = launchPartner.objects.filter(slug=slug).first()
-    context = {"partnersappro": partnersappro}
+    uid= uuid.uuid4()
+    context = {"partnersappro": partnersappro, "uid":uid}
+    print("The uid is========= ",uid)
     return render(request, "restaurantProfile.html", context)
 
     # approvedPartners = launchPartner.objects.all()
@@ -145,7 +148,5 @@ class VerifyEsewa(View):
         }
         resp = req.post(url, d)
         print("Status:========", resp.status_code)
-        # print(resp.text) 
-        messages.success(
-                request, "Paymet ko adi kam bho!")
-        return redirect("/")  # redirect on home
+        # print(resp.text)
+        return HttpResponseRedirect(reverse('index'))

@@ -162,9 +162,9 @@ ul li {
         flex-direction: column;
     }
 
-    .cart {
-        display: none;
-    }
+    /* .cart {
+        display: block;
+    } */
 }
 
 /* =============================== */
