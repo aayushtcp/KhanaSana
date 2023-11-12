@@ -14,6 +14,10 @@ from django.views import View
 import requests as req
 # Create your views here.
 
+# Hash secret  key esewa integration V2
+import hmac
+import hashlib
+
 # For index Page / Landing Page / Home Page
 def index(request):
     return render(request, 'index.html')
@@ -106,11 +110,33 @@ def restaurantlist(request):
 
 def restaurantProfile(request,slug):
     partnersappro = launchPartner.objects.filter(slug=slug).first()
-    uid= uuid.uuid4()
-    context = {"partnersappro": partnersappro, "uid":uid}
-    print("The uid is========= ",uid)
-    return render(request, "restaurantProfile.html", context)
+    # uid= uuid.uuid4()
+    # context = {"partnersappro": partnersappro, "uid":uid}
+    # print("The uid is========= ",uid)
+    
 
+
+    def genSha256(key, message):
+        # partnersappro = launchPartner.objects.filter(slug=slug).first()
+        key = key.encode('utf-8')
+        message = message.encode('utf-8')
+        hmac_sha256 = hmac.new(key, message, hashlib.sha256)
+        return hmac_sha256.hexdigest()
+
+    # Example usage:
+    uid= uuid.uuid4()
+    total_amount = "222"
+    secret_key = "8gBm/:&EnhH.1/q"
+    data_to_sign = f"{total_amount},{uid},EPAYTEST"
+
+    result = genSha256(secret_key, data_to_sign)
+    context = {
+            "partnersappro": partnersappro,
+            'uid': uid,
+            'signature': result            
+    }
+    print("Hello result==============",result)
+    return render(request, "restaurantProfile.html", context)
     # approvedPartners = launchPartner.objects.all()
     # print(approvedPartners)
     # context = {"approvedPartners": approvedPartners}
@@ -150,3 +176,5 @@ class VerifyEsewa(View):
         print("Status:========", resp.status_code)
         # print(resp.text)
         return HttpResponseRedirect(reverse('index'))
+    
+
