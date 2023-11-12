@@ -17,6 +17,7 @@ import requests as req
 # Hash secret  key esewa integration V2
 import hmac
 import hashlib
+import base64
 
 # For index Page / Landing Page / Home Page
 def index(request):
@@ -124,18 +125,21 @@ def restaurantProfile(request,slug):
         return hmac_sha256.hexdigest()
 
     # Example usage:
-    uid= uuid.uuid4()
+    
     total_amount = "222"
     secret_key = "8gBm/:&EnhH.1/q"
+    uid= uuid.uuid4()
     data_to_sign = f"{total_amount},{uid},EPAYTEST"
 
     result = genSha256(secret_key, data_to_sign)
     context = {
             "partnersappro": partnersappro,
             'uid': uid,
-            'signature': result            
+            'total_amount': total_amount,
+            'signature': result
     }
-    print("Hello result==============",result)
+    print("Signature: ",result)
+    print("The uid is========= ",uid)
     return render(request, "restaurantProfile.html", context)
     # approvedPartners = launchPartner.objects.all()
     # print(approvedPartners)
