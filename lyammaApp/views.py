@@ -118,15 +118,23 @@ def restaurantProfile(request,slug):
         # partnersappro = launchPartner.objects.filter(slug=slug).first()
         key = key.encode('utf-8')
         message = message.encode('utf-8')
+
         hmac_sha256 = hmac.new(key, message, hashlib.sha256)
-        return hmac_sha256.hexdigest()
+        print(type(hmac_sha256))
+        digest = hmac_sha256.digest()
+
+        # Convert the digest to a Base64-encoded string
+        signature = base64.b64encode(digest).decode('utf-8')
+
+        return signature
 
     # Example usage:
     
-    total_amount = "222"
+    total_amount = 110
     secret_key = "8gBm/:&EnhH.1/q"
     uid= uuid.uuid4()
-    data_to_sign = f"{total_amount},{uid},EPAYTEST"
+    data_to_sign = f"total_amount={total_amount},transaction_uuid={uid},product_code=EPAYTEST"
+    print(data_to_sign)
 
     result = genSha256(secret_key, data_to_sign)
     context = {
