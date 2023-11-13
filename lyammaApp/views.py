@@ -114,9 +114,6 @@ def restaurantProfile(request,slug):
     # uid= uuid.uuid4()
     # context = {"partnersappro": partnersappro, "uid":uid}
     # print("The uid is========= ",uid)
-    
-
-
     def genSha256(key, message):
         # partnersappro = launchPartner.objects.filter(slug=slug).first()
         key = key.encode('utf-8')
