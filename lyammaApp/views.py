@@ -177,5 +177,3 @@ class VerifyEsewa(View):
         print("Status:========", resp.status_code)
         # print(resp.text)
         return HttpResponseRedirect(reverse('index'))
-    
-
