@@ -111,16 +111,11 @@ def restaurantlist(request):
 
 def restaurantProfile(request,slug):
     partnersappro = launchPartner.objects.filter(slug=slug).first()
-    # uid= uuid.uuid4()
-    # context = {"partnersappro": partnersappro, "uid":uid}
-    # print("The uid is========= ",uid)
     def genSha256(key, message):
-        # partnersappro = launchPartner.objects.filter(slug=slug).first()
         key = key.encode('utf-8')
         message = message.encode('utf-8')
 
         hmac_sha256 = hmac.new(key, message, hashlib.sha256)
-        print(type(hmac_sha256))
         digest = hmac_sha256.digest()
 
         # Convert the digest to a Base64-encoded string
@@ -134,7 +129,7 @@ def restaurantProfile(request,slug):
     secret_key = "8gBm/:&EnhH.1/q"
     uid= uuid.uuid4()
     data_to_sign = f"total_amount={total_amount},transaction_uuid={uid},product_code=EPAYTEST"
-    print(data_to_sign)
+    # print(data_to_sign)
 
     result = genSha256(secret_key, data_to_sign)
     context = {
@@ -143,8 +138,7 @@ def restaurantProfile(request,slug):
             'total_amount': total_amount,
             'signature': result
     }
-    print("Signature: ",result)
-    print("The uid is========= ",uid)
+    # print("Signature: ",result)
     return render(request, "restaurantProfile.html", context)
     # approvedPartners = launchPartner.objects.all()
     # print(approvedPartners)
