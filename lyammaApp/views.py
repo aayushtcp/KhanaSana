@@ -19,6 +19,11 @@ import hmac
 import hashlib
 import base64
 
+
+# For djnago Json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 # For index Page / Landing Page / Home Page
 def index(request):
     return render(request, 'index.html')
@@ -111,6 +116,56 @@ def restaurantlist(request):
 
 def restaurantProfile(request,slug):
     partnersappro = launchPartner.objects.filter(slug=slug).first()
+    if request.method == "POST":
+        def genSha256(key, message):
+            key = key.encode('utf-8')
+            message = message.encode('utf-8')
+
+            hmac_sha256 = hmac.new(key, message, hashlib.sha256)
+            digest = hmac_sha256.digest()
+
+            # Convert the digest to a Base64-encoded string
+            signature = base64.b64encode(digest).decode('utf-8')
+
+            return signature
+
+         # Example usage:
+    
+        total_amount = 110
+        secret_key = "8gBm/:&EnhH.1/q"
+        uid= uuid.uuid4()
+        data_to_sign = f"total_amount={total_amount},transaction_uuid={uid},product_code=EPAYTEST"
+        # print(data_to_sign)
+
+        result = genSha256(secret_key, data_to_sign)
+        amt = request.POST['amount']
+        print("The value is: " + amt)
+        # context = {"amt": amt}
+        context = {
+                "partnersappro": partnersappro,
+                'uid': uid,
+                'total_amount': total_amount,
+                'signature': result,
+                'amt': amt
+             }
+        return render(request, "foresewa.html", context)
+        
+    # print("Signature: ",result)
+    crustcontext= {"partnersappro": partnersappro}
+    return render(request, "restaurantProfile.html",crustcontext)
+    # approvedPartners = launchPartner.objects.all()
+    # print(approvedPartners)
+    # context = {"approvedPartners": approvedPartners}
+    # return render(request, 'fun.html', context)
+
+
+def foresewa(request):
+    if request.method == "POST":
+        guu = request.POST['amount']
+        print("The value is: " + guu)
+        return render(request, "restaurantProfile.html")
+    
+
     def genSha256(key, message):
         key = key.encode('utf-8')
         message = message.encode('utf-8')
@@ -133,18 +188,11 @@ def restaurantProfile(request,slug):
 
     result = genSha256(secret_key, data_to_sign)
     context = {
-            "partnersappro": partnersappro,
             'uid': uid,
             'total_amount': total_amount,
             'signature': result
     }
-    # print("Signature: ",result)
-    return render(request, "restaurantProfile.html", context)
-    # approvedPartners = launchPartner.objects.all()
-    # print(approvedPartners)
-    # context = {"approvedPartners": approvedPartners}
-    # return render(request, 'fun.html', context)
-
+    return render(request, "foresewa.html", context)
 
 def about(request):
     return render(request, 'about.html')
@@ -161,21 +209,3 @@ def contactus(request):
         messages.success(request, "Message Received!")
         # contact.save()
     return render(request, 'contactus.html')
-
-
-# esewa function
-class VerifyEsewa(View):
-    def get(self, request):  
-        url ="https://uat.esewa.com.np/epay/transrec"
-        q= request.GET.get('q')
-        d = {
-            'amt': request.GET.get('amt'),
-            'scd': 'EPAYTEST',
-            'rid': request.GET.get('refid'),
-            # 'rid': '000AE01',
-            'pid':request.GET.get('oid'),
-        }
-        resp = req.post(url, d)
-        print("Status:========", resp.status_code)
-        # print(resp.text)
-        return HttpResponseRedirect(reverse('index'))

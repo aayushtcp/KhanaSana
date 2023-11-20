@@ -43,10 +43,10 @@
                 Net Total: <b id="nettotal" name="nettotal">0</b>
                 <div class="cartbtns">
                     <input class="candcbtns cancel cancelButton" type="submit" value="Remove All" name="cancel" id="">
-                    <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST">
-                        <input type="hidden" id="amount" name="amount" value="100" required>
-                        <input type="hidden" id="tax_amount" name="tax_amount" value="10" required>
-                        <input type="hidden" id="total_amount" name="total_amount" value="110" required>
+                    <!-- <form  method="post" action="https://rc-epay.esewa.com.np/api/epay/main/v2/form">
+                        <input type="text" id="amount" name="amount" value="" required>
+                        <input type="text" id="tax_amount" name="tax_amount" value="10" required>
+                        <input type="hidden" id="total_amount" name="total_amount" value="120" required>
                         <input type="hidden" id="transaction_uuid" name="transaction_uuid" value="{{uid}}" required>
                         <input type="hidden" id="product_code" name="product_code" value="EPAYTEST" required>
                         <input type="hidden" id="product_service_charge" name="product_service_charge" value="0"
@@ -59,6 +59,11 @@
                             value="total_amount,transaction_uuid,product_code" required>
                         <input type="hidden" id="signature" name="signature" value="{{signature}}" required>
                         <input value="Submit" type="submit">
+                    </form> -->
+                    <form  method="post" action="">
+                        {% csrf_token %}
+                        <input type="text" id="amount" name="amount" value="" required>
+                        <input value="Submit" type="submit">
                     </form>
 
 </body>
@@ -67,6 +72,9 @@
 </div>
 </div>
 <h1 id="joo">{{partnersappro.restaurantname}}</h1>
+
+
+
 <script>
     // for dynamic json fetch system using json
     let rName = document.querySelector('#joo');
@@ -128,12 +136,12 @@
 
 
         // net total dom  is here
-        let netTotal = document.querySelector("#nettotal").innerText
+        let netTotal = document.querySelector("#nettotal").innerText;
+        let damount = document.querySelector("#amount");
+        let finalTotal = parseInt(netTotal) + parseInt(pri);
 
-        let finalTotal = parseInt(netTotal) + parseInt(pri)
-
-        nettotal.innerText = finalTotal
-
+        nettotal.innerText = finalTotal;
+        damount.value = finalTotal;
     }
 
     // cancel button

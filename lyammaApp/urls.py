@@ -29,7 +29,5 @@ urlpatterns = [
     # Just doing
     path("about/", views.about, name="about"),
     path("contactus/", views.contactus, name="contactus"),
-    
-    #esewa
-    path("verify-esewa/", views.VerifyEsewa.as_view(), name="verify-esewa"),
+
 ]
