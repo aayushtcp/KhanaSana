@@ -45,7 +45,6 @@
                     <input class="candcbtns cancel cancelButton" type="submit" value="Remove All" name="cancel" id="">
                     <!-- <input class="candcbtns checkout" type="submit" value="Checkout" name="checkout" id=""> -->
 
-                    <body>
                         <!-- <form action="https://uat.esewa.com.np/epay/main" method="POST">
                             <input value="100" name="tAmt" type="hidden">
                             <input value="90" name="amt" type="hidden">
@@ -59,7 +58,7 @@
                                 name="fu">
                             <input class="candcbtns" value="Checkout" type="submit" name="checkout">
                         </form> -->
-                            <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST">
+                            <!-- <form  method="POST" action="https://rc-epay.esewa.com.np/api/epay/main/v2/form">
                             <input type="text" id="amount" name="amount" value="100" required>
                             <input type="text" id="tax_amount" name="tax_amount" value ="10" required>
                             <input type="text" id="total_amount" name="total_amount" value="110" required>
@@ -72,9 +71,12 @@
                             <input type="text" id="signed_field_names" name="signed_field_names" value="total_amount,transaction_uuid,product_code" required>
                             <input type="text" id="signature" name="signature" value="{{signature}}" required>
                             <input value="Submit" type="submit">
+                            </form> -->
+                            <form  method="post" action="">
+                                {% csrf_token %}
+                                <input type="hidden" id="amount" name="amount" value="" required>
+                                <input value="Order" type="submit">
                             </form>
-                           </body>
-                            
                     </body>
                 </div>
             </div>
@@ -143,11 +145,12 @@
 
             // net total dom  is here
             let netTotal = document.querySelector("#nettotal").innerText
+            let amt = document.querySelector("#amount")
 
             let finalTotal = parseInt(netTotal) + parseInt(pri)
 
             nettotal.innerText = finalTotal
-
+            amt.value = finalTotal
         }
 
         // cancel button
