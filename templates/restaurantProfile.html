@@ -74,7 +74,7 @@
                             </form> -->
                             <form  method="post" action="">
                                 {% csrf_token %}
-                                <input type="text" id="amount" name="amount" value="" required>
+                                <input type="hidden" id="amount" name="amount" value="" required>
                                 <input value="Order" type="submit">
                             </form>
                     </body>
