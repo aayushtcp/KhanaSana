@@ -140,9 +140,9 @@ def restaurantProfile(request,slug):
         result = genSha256(secret_key, data_to_sign)
         context = {
                 "res":res,
+                'total_amount': total_amount,
                 "partnersappro": partnersappro,
                 'uid': uid,
-                'total_amount': total_amount,
                 'signature': result
         }
         return render(request, "foresewa.html", context)
