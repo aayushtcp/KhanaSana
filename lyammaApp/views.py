@@ -109,15 +109,14 @@ def restaurantlist(request):
     context = {"approvedPartners": approvedPartners}
     return render(request, 'restaurantlist.html', context)
 
-
-# Restaurant Profile backend
 def restaurantProfile(request,slug):
     partnersappro = launchPartner.objects.filter(slug=slug).first()
     # uid= uuid.uuid4()
     # context = {"partnersappro": partnersappro, "uid":uid}
     # print("The uid is========= ",uid)
     if request.method == 'POST':
-        amt = request.POST["amount"]
+        amtt = request.POST["amount"]
+        res = int(amtt)
         def genSha256(key, message):
             # partnersappro = launchPartner.objects.filter(slug=slug).first()
             key = key.encode('utf-8')
@@ -131,28 +130,29 @@ def restaurantProfile(request,slug):
 
             return signature
 
-    # Example usage:
-    
-        total_amount = amt
+        # Example usage:
+        
+        total_amount = res+10
         secret_key = "8gBm/:&EnhH.1/q"
         uid= uuid.uuid4()
         data_to_sign = f"total_amount={total_amount},transaction_uuid={uid},product_code=EPAYTEST"
 
         result = genSha256(secret_key, data_to_sign)
         context = {
-                ""
+                "res":res,
                 "partnersappro": partnersappro,
                 'uid': uid,
                 'total_amount': total_amount,
                 'signature': result
         }
-        return render(request, "esewa.html", context)
+        return render(request, "foresewa.html", context)
         # approvedPartners = launchPartner.objects.all()
         # print(approvedPartners)
         # context = {"approvedPartners": approvedPartners}
         # return render(request, 'fun.html', context)
-    crustcontext = {"partnersappro": partnersappro}
+    crustcontext= {"partnersappro": partnersappro}    
     return render(request, "restaurantProfile.html", crustcontext)
+
 
 def about(request):
     return render(request, 'about.html')
