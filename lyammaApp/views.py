@@ -21,7 +21,7 @@ import base64
 
 # For index Page / Landing Page / Home Page
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index2.html')
 
 def handleSignup(request):
     if request.method == 'POST':
@@ -132,7 +132,7 @@ def restaurantProfile(request,slug):
 
         # Example usage:
         
-        total_amount = res+10
+        total_amount = res
         secret_key = "8gBm/:&EnhH.1/q"
         uid= uuid.uuid4()
         data_to_sign = f"total_amount={total_amount},transaction_uuid={uid},product_code=EPAYTEST"

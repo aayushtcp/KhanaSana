@@ -20,7 +20,7 @@
         <h2 class="question_h2">Do You want to continue Payment?</h2>
         <form method="POST" action="https://rc-epay.esewa.com.np/api/epay/main/v2/form">
             <input type="hidden" id="amount" name="amount" value="{{res}}" required>
-            <input type="hidden" id="tax_amount" name="tax_amount" value="10" required>
+            <input type="hidden" id="tax_amount" name="tax_amount" value="0" required>
             <input type="hidden" id="total_amount" name="total_amount" value="{{total_amount}}" required>
             <!--Need to make this dynamic-->
             <input type="hidden" id="transaction_uuid" name="transaction_uuid" value="{{uid}}" required>
