@@ -42,7 +42,7 @@
 /* Button CSS start */
 /* =============================== */
 
-.button {
+.buttonconfirm {
     display: inline-block;
     border-radius: 7px;
     border: none;
@@ -59,14 +59,14 @@
     font-weight: bold;
 }
 
-.button span {
+.buttonconfirm span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.4s;
 }
 
-.button span:after {
+.buttonconfirm span:after {
     content: 'Now';
     position: absolute;
     opacity: 0;
@@ -75,13 +75,19 @@
     transition: 0.7s;
 }
 
-.button:hover span {
+.buttonconfirm:hover span {
     padding-right: 3.55em;
 }
 
-.button:hover span:after {
+.buttonconfirm:hover span:after {
     opacity: 4;
     right: 0;
+}
+input{
+    transition: 0.4s ease;
+}
+input:hover{
+    transform: rotate(15deg);
 }
 
 /* =============================== */
