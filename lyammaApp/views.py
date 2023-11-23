@@ -107,7 +107,7 @@ def restaurantlist(request):
     approvedPartners = launchPartner.objects.all()
     # print(allItems)
     context = {"approvedPartners": approvedPartners}
-    return render(request, 'restaurantlist.html', context)
+    return render(request, 'restaurantlist.djt', context)
 
 def restaurantProfile(request,slug):
     partnersappro = launchPartner.objects.filter(slug=slug).first()
@@ -145,13 +145,13 @@ def restaurantProfile(request,slug):
                 'uid': uid,
                 'signature': result
         }
-        return render(request, "foresewa.html", context)
+        return render(request, "foresewa.djt", context)
         # approvedPartners = launchPartner.objects.all()
         # print(approvedPartners)
         # context = {"approvedPartners": approvedPartners}
         # return render(request, 'fun.html', context)
     crustcontext= {"partnersappro": partnersappro}    
-    return render(request, "restaurantProfile.html", crustcontext)
+    return render(request, "restaurantProfile.djt", crustcontext)
 
 
 def about(request):
@@ -174,18 +174,18 @@ def contactus(request):
 
 
 # esewa function
-class VerifyEsewa(View):
-    def get(self, request):  
-        url ="https://uat.esewa.com.np/epay/transrec"
-        q= request.GET.get('q')
-        d = {
-            'amt': request.GET.get('amt'),
-            'scd': 'EPAYTEST',
-            'rid': request.GET.get('refid'),
-            # 'rid': '000AE01',
-            'pid':request.GET.get('oid'),
-        }
-        resp = req.post(url, d)
-        print("Status:========", resp.status_code)
-        # print(resp.text)
-        return HttpResponseRedirect(reverse('index'))
+# class VerifyEsewa(View):
+#     def get(self, request):  
+#         url ="https://uat.esewa.com.np/epay/transrec"
+#         q= request.GET.get('q')
+#         d = {
+#             'amt': request.GET.get('amt'),
+#             'scd': 'EPAYTEST',
+#             'rid': request.GET.get('refid'),
+#             # 'rid': '000AE01',
+#             'pid':request.GET.get('oid'),
+#         }
+#         resp = req.post(url, d)
+#         print("Status:========", resp.status_code)
+#         # print(resp.text)
+#         return HttpResponseRedirect(reverse('index'))
