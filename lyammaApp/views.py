@@ -165,10 +165,12 @@ def contactus(request):
         cphone = request.POST['cphone']
         content = request.POST['content']
         contact = Contact(cname=cname,cemail=cemail, cphone=cphone, content=content)
-        print(contact)
-        messages.success(request, "Message Received!")
-        # contact.save()
-    return render(request, 'contactus.html')
+        # print(contact)
+        # messages.success(request, "Message Received!")
+        contact.save()
+        return render(request, 'contactus.djt', {'cname': cname})
+    else:
+        return render(request, 'contactus.djt', {})
 
 
 # esewa function

@@ -16,6 +16,9 @@
 
 <body>
     {% block content %}
+    {% if cname %}
+    <h1 style="color: red;">Hello {{cname}}</h1>
+    {% else %}
     <!-- Banner starts -->
     <hr>
     <div class="index-banner">
@@ -49,7 +52,7 @@
 
                     <div class="email details">
                         <i class="fas fa-envelope"></i>
-                        <div class="topic">Email</div>
+                        <div class="topic">Email to {{cname}}</div>
                         <div class="text-one">lyammakyamma@gmail.com</div>
                         <div class="text-two">test@gmail.com</div>
                     </div>
@@ -81,7 +84,8 @@
                             <input type="email" name="cemail" placeholder="Enter your email">
                         </div>
                         <div class="input-box" data-aos="fade-up">
-                            <input type="phone" name="cphone" placeholder="Enter your phone number" onkeyup="validPhone(this)">
+                            <input type="phone" name="cphone" placeholder="Enter your phone number"
+                                onkeyup="validPhone(this)">
                         </div>
                         <div id="phoneError"></div>
                         <div class="input-box message-box" data-aos="fade-up">
@@ -180,6 +184,7 @@
     </section>
     <script src="{%static 'contactus.js' %}"></script>
     <!-- contact card ens -->
+    {% endif %}
     {% endblock %}
 </body>
 
