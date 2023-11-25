@@ -168,9 +168,9 @@ def contactus(request):
         # print(contact)
         # messages.success(request, "Message Received!")
         contact.save()
-        return render(request, 'contactus.djt', {'cname': cname})
+        return render(request, 'contactus.html', {'cname': cname})
     else:
-        return render(request, 'contactus.djt', {})
+        return render(request, 'contactus.html', {})
 
 
 # esewa function
