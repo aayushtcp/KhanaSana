@@ -88,7 +88,7 @@
         let rName = document.querySelector('#joo');
         let forjson = rName.innerHTML;
         STATIC_URL = "/static";
-        fetch(`${STATIC_URL}/${forjson}.json`)
+        fetch(`${STATIC_URL}/json/${forjson}.json`)
             //dynamic json fetch system ends
 
             .then(function (response) {
