@@ -75,7 +75,7 @@
                             <form  method="post" action="">
                                 {% csrf_token %}
                                 <input type="hidden" id="amount" name="amount" value="" required>
-                                <input value="Order" type="submit">
+                                <input value="Order" type="submit" id="btns">
                             </form>
                     </body>
                 </div>
@@ -148,7 +148,6 @@
             let amt = document.querySelector("#amount")
 
             let finalTotal = parseInt(netTotal) + parseInt(pri)
-
             nettotal.innerText = finalTotal
             amt.value = finalTotal
         }

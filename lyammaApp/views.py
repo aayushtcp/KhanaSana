@@ -43,7 +43,7 @@ def handleSignup(request):
             return redirect("/")
 
         if password != cpassword:
-            messages.error(request, "Password do not match!")
+            messages.error(request, "Password mismatch")
             return redirect("/")
 
         # Create the user
@@ -117,6 +117,7 @@ def restaurantProfile(request,slug):
     if request.method == 'POST':
         amtt = request.POST["amount"]
         res = int(amtt)
+        print(res)
         def genSha256(key, message):
             # partnersappro = launchPartner.objects.filter(slug=slug).first()
             key = key.encode('utf-8')
@@ -151,7 +152,7 @@ def restaurantProfile(request,slug):
         # context = {"approvedPartners": approvedPartners}
         # return render(request, 'fun.html', context)
     crustcontext= {"partnersappro": partnersappro}    
-    return render(request, "restaurantProfile.djt", crustcontext)
+    return render(request, "restaurantProfile.html", crustcontext)
 
 
 def about(request):
