@@ -16,8 +16,10 @@
 
 <body>
     <header class="header">
-        <!-- <img src="{%static 'logos.svg'%}" alt="lyamma lyamm logo" class="logo"> -->
-        <h1 class="logo">Lyamma</span></h1>
+        <a href="/">
+            <img src="{%static 'images/logos.svg'%}" alt="lyamma lyamm logo" class="logo">
+        </a>
+        <!-- <h1 class="logo">Lyamma</h1> -->
         <nav class="navbar">
             <ul class="navbar-list">
                 <li><a class="navkolinks" href="/">Home</a></li>
@@ -53,7 +55,8 @@
     <hr>
     <footer class="footer">
         <div class="fone">
-            <h2>Logo</h2>
+            <!-- <h2>Logo</h2> -->
+            <img src="{%static 'images/logos.svg'%}" alt="lyamma lyamm logo" class="footer-logo">
             <p>We seek to provide a better and quick food delivery.<br> <span> La khamm hai ta Hajur!</span></p>
             <div class="footer-links">
                 <a href=""><i class="fa-brands fa-square-facebook"></i></a>
@@ -211,7 +214,7 @@
         });
     </script>
     <!-- login popup script ends -->
-    
+
     <script>
         document.getElementById("show-logout").onclick = function () {
             location.href = "/logout";
