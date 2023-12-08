@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block base_style%}
     {{ block.super }}
-    <link rel="stylesheet" href="{% static 'about.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/about.css' %}">
     {% endblock base_style%}
     <title>Restaurant | Profile</title>
 </head>

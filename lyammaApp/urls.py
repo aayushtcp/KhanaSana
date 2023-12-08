@@ -29,5 +29,6 @@ urlpatterns = [
     # Just doing
     path("about/", views.about, name="about"),
     path("contactus/", views.contactus, name="contactus"),
+    path("loginpage/", views.loginpage, name="loginpage"),
 
 ]

@@ -9,35 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block base_style%}
     {{ block.super }}
-    <link rel="stylesheet" href="{% static 'restaurantlist.css' %}">
-    <!-- <style>
-        :root {
-            --bcolor: #00101F;
-            --footer-color: #010a12;
-            --mainheading: #F4CE14;
-            --para: #fff6f4;
-            --hotish: #FF3FA4;
-            --skyblue: #525FE1;
-            --suntala: rgb(152, 79, 0);
-        }
-
-        body {
-            background: var(--bcolor) !important;
-            color: var(--para);
-        }
-
-        .partnerharu ul li {
-            list-style: none;
-            background-color: var(--mainheading);
-        }
-
-        .partnerharu ul li a {
-            text-decoration: none;
-            color: var(--para);
-            font-size: 30px;
-            padding: 10px;
-        }
-    </style> -->
+    <link rel="stylesheet" href="{% static 'styles/restaurantlist.css' %}">
     {% endblock base_style%}
     <title>Restaurant | Profile</title>
 </head>

@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 import uuid 
 from .models import PartnerRequest,launchPartner, AllItems,Contact
-
+from django.contrib.auth.decorators import login_required
 # also for payment gateway
 from django.urls import reverse, reverse_lazy
 from django.views import View
@@ -107,8 +107,9 @@ def restaurantlist(request):
     approvedPartners = launchPartner.objects.all()
     # print(allItems)
     context = {"approvedPartners": approvedPartners}
-    return render(request, 'restaurantlist.djt', context)
+    return render(request, 'restaurantlist.html', context)
 
+@login_required(login_url='/loginpage/')
 def restaurantProfile(request,slug):
     partnersappro = launchPartner.objects.filter(slug=slug).first()
     # uid= uuid.uuid4()
@@ -174,6 +175,8 @@ def contactus(request):
         return render(request, 'contactus.html', {})
 
 
+def loginpage(request):
+    return render(request, 'loginpage.html')
 # esewa function
 # class VerifyEsewa(View):
 #     def get(self, request):  

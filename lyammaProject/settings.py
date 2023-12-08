@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-6r=wbz^q-+vad^p(r##-ea^9z=cv_gsg($awl05g&3ps*2sl@s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.254.90', '127.0.0.1'] #Bigreko huna sakxa
+ALLOWED_HOSTS = ['192.168.254.90', '127.0.0.1', '192.168.254.150'] #Bigreko huna sakxa
 
 
 # Application definition
