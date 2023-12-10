@@ -151,13 +151,13 @@ def restaurantProfile(request,slug):
         # approvedPartners = launchPartner.objects.all()
         # print(approvedPartners)
         # context = {"approvedPartners": approvedPartners}
-        # return render(request, 'fun.html', context)
+        # return render(request, 'fun.djt', context)
     crustcontext= {"partnersappro": partnersappro}    
     return render(request, "restaurantProfile.html", crustcontext)
 
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'about.djt')
 
 
 def contactus(request):
