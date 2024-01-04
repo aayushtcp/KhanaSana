@@ -47,6 +47,10 @@ def handleSignup(request):
             return redirect("/")
 
         # Create the user
+        if(User.objects.filter(username = username)):
+            messages.error(request, "Username already exists")
+            return redirect('/')
+
         myuser = User.objects.create_user(username, email, password)
         # myuser.is_staff = True
         myuser.save()
